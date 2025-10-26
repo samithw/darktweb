@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { TrendingUp, Twitter, Youtube, Instagram } from 'lucide-react';
 import Image from 'next/image';
@@ -23,7 +22,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           <div className="flex flex-col items-center gap-4 md:items-start">
             <Link href="/#home" className="flex items-center gap-2">
-              <Image src="https://storage.googleapis.com/stytch-public-prod/1698f731-a7eb-4899-a1b9-3e3a47926b4d/Y2acLKJG9N.png" alt="Dark Trader Logo" width={24} height={24} />
+              <Image src="/logo.png" alt="Dark Trader Logo" width={24} height={24} />
               <span className="text-xl font-bold text-white">Dark Trader</span>
             </Link>
             <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Dark Trader. All rights reserved.</p>
