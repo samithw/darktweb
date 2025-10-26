@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           <div className="flex flex-col items-center gap-4 md:items-start">
             <Link href="/#home" className="flex items-center gap-2">
-              <Image src="https://picsum.photos/seed/logo/24/24" alt="Dark Trader Logo" width={24} height={24} className="rounded-full" />
+              <Image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCQMAAACfch3uAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAANQTFRF////p8QbyAAAABJJREFUeJxjYBgFo2AUjIJRMApGwSigAwAABAAB/zJ3ZgAAAABJRU5ErkJggg==" alt="Dark Trader Logo" width={24} height={24} />
               <span className="text-xl font-bold text-white">Dark Trader</span>
             </Link>
             <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Dark Trader. All rights reserved.</p>

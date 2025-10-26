@@ -49,7 +49,7 @@ export default function Header() {
       <div className="container flex h-20 items-center justify-between">
         <Link href="/#home" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
           {/* Replace this with your actual logo */}
-          <Image src="https://picsum.photos/seed/logo/40/40" alt="Dark Trader Logo" width={40} height={40} className="rounded-full" />
+          <Image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCQMAAACfch3uAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAANQTFRF////p8QbyAAAABJJREFUeJxjYBgFo2AUjIJRMApGwSigAwAABAAB/zJ3ZgAAAABJRU5ErkJggg==" alt="Dark Trader Logo" width={40} height={40} />
           <span className="text-xl font-bold text-white">Dark Trader</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -69,7 +69,7 @@ export default function Header() {
               <div className="p-6">
                 <div className="flex items-center justify-between mb-8">
                     <Link href="/#home" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                        <Image src="https://picsum.photos/seed/logo/40/40" alt="Dark Trader Logo" width={40} height={40} className="rounded-full" />
+                        <Image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCQMAAACfch3uAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAANQTFRF////p8QbyAAAABJJREFUeJxjYBgFo2AUjIJRMApGwSigAwAABAAB/zJ3ZgAAAABJRU5ErkJggg==" alt="Dark Trader Logo" width={40} height={40} />
                         <span className="text-xl font-bold text-white">Dark Trader</span>
                     </Link>
                 </div>
