@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -7,15 +8,16 @@ import { Menu, TrendingUp, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/mentorships', label: 'Mentorships' },
-  { href: '/sierra-chart-templates', label: 'Sierra Chart' },
-  { href: '/atas-templates', label: 'ATAS' },
-  { href: '/mt5-templates', label: 'MT5' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: '#home', label: 'Home' },
+  { href: '#mentorships', label: 'Mentorships' },
+  { href: '#sierra-chart-templates', label: 'Sierra Chart' },
+  { href: '#atas-templates', label: 'ATAS' },
+  { href: '#mt5-templates', label: 'MT5' },
+  { href: '#about', label: 'About' },
+  { href: '#contact', label: 'Contact' },
 ];
 
 export default function Header() {
@@ -23,7 +25,10 @@ export default function Header() {
   const pathname = usePathname();
 
   const NavLink = ({ href, label, className }: { href: string; label: string; className?: string; }) => {
-    const isActive = pathname === href;
+    // Single-page sites don't have a concept of an "active" page based on pathname
+    // You might want to implement scroll-based active link highlighting in the future
+    const isActive = false; 
+
     return (
       <Link
         href={href}
@@ -42,8 +47,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-black/80 backdrop-blur-lg">
       <div className="container flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-          <TrendingUp className="h-6 w-6 text-primary" />
+        <Link href="/#home" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+          {/* Replace this with your actual logo */}
+          <Image src="https://picsum.photos/seed/logo/40/40" alt="Dark Trader Logo" width={40} height={40} className="rounded-full" />
           <span className="text-xl font-bold text-white">Dark Trader</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -62,8 +68,8 @@ export default function Header() {
             <SheetContent side="right" className="w-[300px] bg-black">
               <div className="p-6">
                 <div className="flex items-center justify-between mb-8">
-                    <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                        <TrendingUp className="h-6 w-6 text-primary" />
+                    <Link href="/#home" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+                        <Image src="https://picsum.photos/seed/logo/40/40" alt="Dark Trader Logo" width={40} height={40} className="rounded-full" />
                         <span className="text-xl font-bold text-white">Dark Trader</span>
                     </Link>
                 </div>

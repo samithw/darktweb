@@ -1,11 +1,13 @@
+
 import Link from 'next/link';
 import { TrendingUp, Twitter, Youtube, Instagram } from 'lucide-react';
+import Image from 'next/image';
 
 const navLinks = [
-  { href: '/mentorships', label: 'Mentorships' },
-  { href: '/sierra-chart-templates', label: 'Sierra Chart' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: '#mentorships', label: 'Mentorships' },
+  { href: '#sierra-chart-templates', label: 'Sierra Chart' },
+  { href: '#about', label: 'About' },
+  { href: '#contact', label: 'Contact' },
 ];
 
 const socialLinks = [
@@ -20,8 +22,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           <div className="flex flex-col items-center gap-4 md:items-start">
-            <Link href="/" className="flex items-center gap-2">
-              <TrendingUp className="h-6 w-6 text-primary" />
+            <Link href="/#home" className="flex items-center gap-2">
+              <Image src="https://picsum.photos/seed/logo/24/24" alt="Dark Trader Logo" width={24} height={24} className="rounded-full" />
               <span className="text-xl font-bold text-white">Dark Trader</span>
             </Link>
             <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Dark Trader. All rights reserved.</p>
