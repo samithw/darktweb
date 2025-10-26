@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "home-hero",
+      "description": "Abstract background of trading charts and financial data.",
+      "imageUrl": "https://images.unsplash.com/photo-1745301754104-4effee07d6ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cmFkaW5nJTIwY2hhcnRzfGVufDB8fHx8MTc2MTUwNzE5MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "trading charts"
+    },
+    {
+      "id": "mentorship-live",
+      "description": "A person presenting in front of a group in a modern setting.",
+      "imageUrl": "https://picsum.photos/seed/dtrader2/600/400",
+      "imageHint": "live mentorship"
+    },
+    {
+      "id": "mentorship-individual",
+      "description": "Two people in a one-on-one meeting, looking at a laptop.",
+      "imageUrl": "https://images.unsplash.com/photo-1563953715689-335fe4271a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwZXJzb25hbCUyMGNvYWNoaW5nfGVufDB8fHx8MTc2MTQ2MTM1OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "personal coaching"
+    },
+    {
+      "id": "mentorship-selfstudy",
+      "description": "A person studying on a laptop at a desk.",
+      "imageUrl": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxvbmxpbmUlMjBsZWFybmluZ3xlbnwwfHx8fDE3NjE0NzgyODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "online learning"
+    },
+    {
+      "id": "sierra-chart-template",
+      "description": "A complex financial chart template for Sierra Chart.",
+      "imageUrl": "https://images.unsplash.com/photo-1755728806777-25a38d3fa9a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxmaW5hbmNpYWwlMjBjaGFydHxlbnwwfHx8fDE3NjE1MDM3NDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "financial chart"
+    },
+    {
+      "id": "atas-template",
+      "description": "A trading interface for ATAS platform.",
+      "imageUrl": "https://images.unsplash.com/photo-1660030584437-10c529d4a6cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0cmFkaW5nJTIwcGxhdGZvcm18ZW58MHx8fHwxNzYxNDA0MDY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "trading platform"
+    },
+    {
+      "id": "mt5-template",
+      "description": "MetaTrader 5 interface with charts and indicators.",
+      "imageUrl": "https://images.unsplash.com/photo-1643962579399-705ba9e9cc0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzdG9jayUyMGludGVyZmFjZXxlbnwwfHx8fDE3NjE1MDcxOTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "stock interface"
+    },
+    {
+      "id": "about-us",
+      "description": "A portrait of the founder or a modern office space.",
+      "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjE0MDAwMTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "contact-banner",
+      "description": "An abstract image with contact icons.",
+      "imageUrl": "https://images.unsplash.com/photo-1562575214-da9fcf59b907?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxhYnN0cmFjdCUyMHRlY2h8ZW58MHx8fHwxNzYxNDk0NjQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract tech"
+    }
+  ]
 }
