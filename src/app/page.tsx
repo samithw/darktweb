@@ -13,8 +13,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import Logo from '../../../public/images/dt-logo.jpg';
 import { Award, Target, Eye, CheckCircle, Gem, Users, Library, Mail, Phone, MapPin } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import Logo from '../../../public/images/dt-logo.jpg';
 
 // Data for sections
 const aboutValues = [
@@ -104,12 +105,45 @@ const formSchema = z.object({
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 
-const sierraChartTemplates = Array.from({ length: 22 }, (_, i) => ({
-  name: `Chart Template ${i + 1}`,
-  imageUrl: `https://picsum.photos/seed/sierra${i + 1}/400/300`,
-  description: `A brief description for chart template ${i + 1}.`,
-  imageHint: 'chart template'
-}));
+const sierraChartTemplates = [
+  { fileName: "101-chart-cdv-999.jpg", description: "Chart - CDV Template, Price LKR 999" },
+  { fileName: "102-red-delta-dom-free.jpg", description: "Red Delta DOM Template, Price LKR free" },
+  { fileName: "103-xauusd-main-999.jpg", description: "xauusd Main Template, Price LKR 999" },
+  { fileName: "104-main-delta-bars-1499.jpg", description: "Main-Delta Bars Template, Price LKR 1,499" },
+  { fileName: "105-real-cdv-1499.jpg", description: "Real cdv Template, Price LKR 1,499" },
+  { fileName: "106-delta-by-vol-1499.jpg", description: "Delta by Vol Template, Price LKR 1,499" },
+  { fileName: "107-sin-delta-vol-1500.jpg", description: "Sin Delta - Vol Template, Price LKR 1,500" },
+  { fileName: "108-tpo-999.jpg", description: "TPO Template, Price LKR 999" },
+  { fileName: "109-heatmap-999.jpg", description: "HeatMap Template, Price LKR 999" },
+  { fileName: "110-main-02-dom-1499.jpg", description: "Main 02 - DOM Template, Price LKR 1,499" },
+  { fileName: "111-xauusd-fp-999.jpg", description: "XAUUSD FP Template, Price LKR 999" },
+  { fileName: "112-xauusd-fp-advance-1499.jpg", description: "XAUUSD FP Advance Template, Price LKR 1,499" },
+  { fileName: "113-tpo-2-advance-999.jpg", description: "TPO 2 Advance Template, Price LKR 999" },
+  { fileName: "114-mod-dom-999.jpg", description: "Mod DOM Template, Price LKR 999" },
+  { fileName: "115-btc-dom-bubble-999.jpg", description: "BTC DOM-Bubble Template, Price LKR 999" },
+  { fileName: "116-carmine-dom-999.jpg", description: "Carmine DOM Template, Price LKR 999" },
+  { fileName: "117-footprint-2-in-1-1499.jpg", description: "Footprint 2 in 1 Template, Price LKR 1,499" },
+  { fileName: "118-hacker-footprint-1499.jpg", description: "Hacker Footprint Template, Price LKR 1,499" },
+  { fileName: "119-powerfull-tpo-02-1999.jpg", description: "Powerful TPO 02 Template, Price LKR 1,999" },
+  { fileName: "120-powerfull-tpo-01-2499.jpg", description: "Powerful TPO 01 Template, Price LKR 2,499" },
+  { fileName: "121-low-vol-node-1499.jpg", description: "Low Vol Node Template, Price LKR 1,499" },
+  { fileName: "122-blue-red-footprint-1499.jpg", description: "Blue Red Footprint Template, Price LKR 1,499" }
+].map(template => {
+  const parts = template.description.split(', Price ');
+  const name = parts[0];
+  const price = parts[1];
+  return {
+    ...template,
+    name,
+    price,
+    imageUrl: `/images/sierra-charts/${template.fileName}`,
+    imageHint: 'chart template'
+  };
+}).sort((a, b) => {
+  const numA = parseInt(a.fileName.substring(0, 3), 10);
+  const numB = parseInt(b.fileName.substring(0, 3), 10);
+  return numA - numB;
+});
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'home-hero');
@@ -233,23 +267,27 @@ export default function Home() {
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {sierraChartTemplates.map((template) => (
-              <Card key={template.name} className="overflow-hidden">
-                <CardContent className="p-0">
+              <Card key={template.fileName} className="overflow-hidden flex flex-col">
+                <CardContent className="p-0 flex flex-col flex-grow">
                   <div className="aspect-w-4 aspect-h-3">
                     <Image
                       src={template.imageUrl}
                       alt={template.name}
                       width={400}
                       height={300}
-                      className="object-cover"
+                      className="object-cover w-full h-full"
                       data-ai-hint={template.imageHint}
                     />
                   </div>
-                  <div className="p-4">
-                    <CardTitle className="text-lg">{template.name}</CardTitle>
-                    <CardDescription className="mt-2 text-sm">
-                      {template.description}
+                  <div className="p-4 flex flex-col flex-grow justify-between">
+                    <CardDescription className="text-base text-card-foreground">
+                      {template.name}
                     </CardDescription>
+                    <div className="mt-4">
+                       <Badge variant="default" className="text-sm">
+                         {template.price}
+                       </Badge>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
