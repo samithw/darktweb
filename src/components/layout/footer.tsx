@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
           <div className="flex flex-col items-center gap-4 md:items-start">
             <Link href="/#home" className="flex items-center gap-2">
-              <Image src="/images/dt-logo.jpg" alt="Dark Trader Logo" width={40} height={40} />
+              <Image src="/images/dt-logo.jpg" alt="Dark Trader Logo" width={50} height={50} />
               <span className="text-xl font-bold text-white">Dark Trader</span>
             </Link>
             <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Dark Trader. All rights reserved.</p>
