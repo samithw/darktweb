@@ -133,7 +133,7 @@ const sierraChartTemplates = [
   const parts = template.description.split(', Price ');
   const name = parts[0];
   const price = parts[1];
-  const isFree = price === 'LKR free';
+  const isFree = price.toLowerCase().includes('free');
   return {
     ...template,
     name,
@@ -148,11 +148,45 @@ const sierraChartTemplates = [
   return numA - numB;
 });
 
+const mt5Templates = [
+    { fileName: "101-appcapfx-trade-manager-free_800x406.jpg", description: "AppcapFX-Trade-Manager Template, Price LKR free" },
+    { fileName: "102-better-volume-1-5-free_800x406.jpg", description: "Better Volume 1.5 Template, Price LKR free" },
+    { fileName: "103-gold-heatmap-red-4999_800x406.jpg", description: "Gold HeatMap - red Template, Price LKR 4,999" },
+    { fileName: "104-gold-heatmap-blue-4999_800x406.jpg", description: "Gold HeatMap - Blue Template, Price LKR 4,999" },
+    { fileName: "105-cdv-heik-v2-999_800x406.jpg", description: "CDV - Heik - v2 Template, Price LKR 999" },
+    { fileName: "106-fundednext-sessionbar-free_800x406.jpg", description: "FundedNext SessionBar Template, Price LKR free" },
+    { fileName: "107-fundednext-trade-manager-free_800x406.jpg", description: "FundedNext Trade Manager Template, Price LKR free" },
+    { fileName: "108-volume-profile-free_800x406.jpg", description: "Volume profile Template, Price LKR Free" },
+    { fileName: "109-maxmin-delta-free_800x406.jpg", description: "MaxMin DELTA Template, Price LKR Free" },
+    { fileName: "110-strategy-checklist-free_800x406.jpg", description: "Strategy Checklist Template, Price LKR Free" },
+    { fileName: "111-vwap-free_800x406.jpg", description: "VWAP Template, Price LKR Free" },
+    { fileName: "112-average-volume-pro-free_800x406.jpg", description: "Average volume Pro Template, Price LKR free" },
+    { fileName: "113-volume-profile-pro-999_800x406.jpg", description: "Volume profile Pro Template, Price LKR 999" },
+    { fileName: "114-vwap-d-wm-free_800x406.jpg", description: "Vwap -D,WM Template, Price LKR Free" },
+    { fileName: "115-darktrader-vwap-999_800x406.jpg", description: "Darktrader Vwap Template, Price LKR 999" },
+].map(template => {
+    const parts = template.description.split(', Price ');
+    const name = parts[0];
+    const price = parts[1];
+    const isFree = price.toLowerCase().includes('free');
+    return {
+        ...template,
+        name,
+        price: isFree ? 'Download for free' : price,
+        isFree,
+        imageUrl: `/images/mt5-templates/${template.fileName}`,
+        imageHint: 'mt5 template'
+    };
+}).sort((a, b) => {
+    const numA = parseInt(a.fileName.substring(0, 3), 10);
+    const numB = parseInt(b.fileName.substring(0, 3), 10);
+    return numA - numB;
+});
+
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'home-hero');
   const aboutImage = PlaceHolderImages.find((img) => img.id === 'about-us');
   const atasImage = PlaceHolderImages.find((img) => img.id === 'atas-template');
-  const mt5Image = PlaceHolderImages.find((img) => img.id === 'mt5-template');
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -347,41 +381,48 @@ export default function Home() {
       {/* MT5 Section */}
       <section id="mt5-templates" className="bg-card text-card-foreground">
         <div className="container mx-auto px-4 py-16 sm:py-24">
-            <div className="text-center">
-                <h1 className="text-4xl font-extrabold tracking-tight font-headline sm:text-5xl">
-                MT5 Templates
-                </h1>
-                <p className="mt-4 max-w-2xl mx-auto text-xl text-muted-foreground">
-                Enhance your MetaTrader 5 experience with templates designed for serious traders.
-                </p>
-            </div>
-            <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div className="text-lg text-muted-foreground space-y-6">
-                <p>Bring powerful order flow concepts to the popular MT5 platform. While MT5 is not a native order flow platform, our templates and indicators help bridge the gap by providing enhanced volume and price action analysis.</p>
-                <ul className="space-y-3 list-disc list-inside">
-                    <li>Advanced volume indicators to supplement your analysis.</li>
-                    <li>Clean, professional chart layouts for multi-timeframe analysis.</li>
-                    <li>Tools to help identify key supply and demand zones.</li>
-                    <li>Easy installation and customization to fit your style.</li>
-                </ul>
-                <p>Get the most out of MT5 by incorporating key institutional concepts into your trading strategy.</p>
-                <Button asChild size="lg" className="mt-4">
-                    <Link href="#contact">Get Templates</Link>
-                </Button>
-                </div>
-                <div>
-                {mt5Image && (
+          <div className="text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight font-headline sm:text-5xl">
+              MT5 Templates
+            </h1>
+            <p className="mt-4 max-w-2xl mx-auto text-xl text-muted-foreground">
+              Enhance your MetaTrader 5 experience with templates designed for serious traders.
+            </p>
+          </div>
+          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {mt5Templates.map((template) => (
+              <Card key={template.fileName} className="overflow-hidden flex flex-col">
+                <CardContent className="p-0 flex flex-col flex-grow">
+                  <div className="aspect-w-4 aspect-h-3">
                     <Image
-                    src={mt5Image.imageUrl}
-                    alt={mt5Image.description}
-                    width={800}
-                    height={600}
-                    className="rounded-lg shadow-2xl"
-                    data-ai-hint={mt5Image.imageHint}
+                      src={template.imageUrl}
+                      alt={template.name}
+                      width={800}
+                      height={406}
+                      className="object-cover w-full h-full"
+                      data-ai-hint={template.imageHint}
                     />
-                )}
-                </div>
-            </div>
+                  </div>
+                  <div className="p-4 flex flex-col flex-grow justify-between">
+                    <CardDescription className="text-base text-card-foreground">
+                      {template.name}
+                    </CardDescription>
+                    <div className="mt-4">
+                       {template.isFree ? (
+                          <Link href="#" className={cn(badgeVariants({ variant: 'default' }), 'text-sm')}>
+                            {template.price}
+                          </Link>
+                       ) : (
+                         <Badge variant="default" className="text-sm">
+                           {template.price}
+                         </Badge>
+                       )}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
