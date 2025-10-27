@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { TrendingUp, Twitter, Youtube, Instagram } from 'lucide-react';
+import { Twitter, Youtube, Instagram } from 'lucide-react';
 import Image from 'next/image';
 
 const navLinks = [
