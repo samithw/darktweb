@@ -14,7 +14,8 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { Award, Target, Eye, CheckCircle, Gem, Users, Library, Mail, Phone, MapPin } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import { Badge, badgeVariants } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
 import Logo from '../../../public/images/dt-logo.jpg';
 
 // Data for sections
@@ -287,9 +288,9 @@ export default function Home() {
                     </CardDescription>
                     <div className="mt-4">
                        {template.isFree ? (
-                          <Button asChild variant="link" className="p-0 h-auto text-primary hover:no-underline">
-                            <Link href="#">{template.price}</Link>
-                          </Button>
+                          <Link href="#" className={cn(badgeVariants({ variant: 'default' }), 'text-sm')}>
+                            {template.price}
+                          </Link>
                        ) : (
                          <Badge variant="default" className="text-sm">
                            {template.price}
@@ -519,3 +520,5 @@ export default function Home() {
     </>
   );
 }
+
+    
