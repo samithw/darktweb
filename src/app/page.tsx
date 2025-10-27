@@ -43,7 +43,7 @@ const mentorships = [
     title: 'Live Mentorship Program',
     description:
       'For serious traders who want to master the real mechanics of the market in a group setting.',
-    price: '36,000 LKR',
+    price: '18,000 LKR',
     features: [
       'Auction Market Theory & Market Structure',
       'Key Levels & Liquidity Zones',
@@ -65,7 +65,7 @@ const mentorships = [
     title: 'Individual Orderflow Mentorship',
     description:
       'One-on-one program for traders who want straight focus and faster results.',
-    price: '80,000 LKR',
+    price: '40,000 LKR',
     features: [
       '100% personal attention',
       'Customized learning pace',
@@ -161,7 +161,7 @@ export default function Home() {
       email: "",
       message: "",
     },
-  })
+  });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values)
@@ -223,8 +223,8 @@ export default function Home() {
               }`}
             >
               <CardHeader className="flex-grow">
-                <div className="flex items-center gap-4">
-                  <mentorship.icon className="h-10 w-10 text-primary" />
+                <div className="flex items-start gap-4">
+                  <mentorship.icon className="h-10 w-10 text-primary flex-shrink-0" />
                   <div>
                     <CardTitle className="text-2xl">{mentorship.title}</CardTitle>
                     <CardDescription className="mt-1">{mentorship.description}</CardDescription>
@@ -520,5 +520,3 @@ export default function Home() {
     </>
   );
 }
-
-    
