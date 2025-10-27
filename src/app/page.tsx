@@ -132,10 +132,12 @@ const sierraChartTemplates = [
   const parts = template.description.split(', Price ');
   const name = parts[0];
   const price = parts[1];
+  const isFree = price === 'LKR free';
   return {
     ...template,
     name,
-    price,
+    price: isFree ? 'Download for free' : price,
+    isFree,
     imageUrl: `/images/sierra-charts/${template.fileName}`,
     imageHint: 'chart template'
   };
@@ -284,9 +286,15 @@ export default function Home() {
                       {template.name}
                     </CardDescription>
                     <div className="mt-4">
-                       <Badge variant="default" className="text-sm">
-                         {template.price}
-                       </Badge>
+                       {template.isFree ? (
+                          <Button asChild variant="link" className="p-0 h-auto text-primary hover:no-underline">
+                            <Link href="#">{template.price}</Link>
+                          </Button>
+                       ) : (
+                         <Badge variant="default" className="text-sm">
+                           {template.price}
+                         </Badge>
+                       )}
                     </div>
                   </div>
                 </CardContent>
@@ -511,5 +519,3 @@ export default function Home() {
     </>
   );
 }
-
-    
