@@ -47,7 +47,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-black/80 backdrop-blur-lg">
       <div className="container flex h-20 items-center justify-between">
         <Link href="/#home" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-          <Image src="/images/logo.png" alt="Dark Trader Logo" width={40} height={40} />
+          <Image src="/image/dt-logo.jpg" alt="Dark Trader Logo" width={40} height={40} />
           <span className="text-xl font-bold text-white">Dark Trader</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -67,7 +67,7 @@ export default function Header() {
               <div className="p-6">
                 <div className="flex items-center justify-between mb-8">
                     <Link href="/#home" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                        <Image src="/images/logo.png" alt="Dark Trader Logo" width={40} height={40} />
+                        <Image src="/image/dt-logo.jpg" alt="Dark Trader Logo" width={40} height={40} />
                         <span className="text-xl font-bold text-white">Dark Trader</span>
                     </Link>
                 </div>
