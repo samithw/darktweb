@@ -13,7 +13,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Award, Target, Eye, CheckCircle, Gem, Users, Library, Mail, Phone, MapPin } from 'lucide-react';
+import { Award, Target, Eye, CheckCircle, Gem, Users, Library, Mail, Phone, MapPin, Send, Video, Wallet, Gift } from 'lucide-react';
 import { Badge, badgeVariants } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import Logo from '../../../public/images/dt-logo.jpg';
@@ -162,8 +162,8 @@ const mt5Templates = [
     { fileName: "111-vwap-free_800x406.jpg", description: "VWAP Template, Price LKR Free" },
     { fileName: "112-average-volume-pro-free_800x406.jpg", description: "Average volume Pro Template, Price LKR free" },
     { fileName: "113-volume-profile-pro-999_800x406.jpg", description: "Volume profile Pro Template, Price LKR 999" },
-    { fileName: "114-vwap-d-wm-free_800x406.jpg", description: "Vwap -D,WM Template, Price LKR Free" },
-    { fileName: "115-darktrader-vwap-999_800x406.jpg", description: "Darktrader Vwap Template, Price LKR 999" },
+    { fileName: "114-vwap-d-wm-free_800x410.jpg", description: "Vwap DWM Template, Price LKR Free" },
+    { fileName: "115-darktrader-vwap-999_800x401.jpg", description: "Darktrader Vwap Template, Price LKR 999" },
 ].map(template => {
     const parts = template.description.split(', Price ');
     const name = parts[0];
@@ -182,6 +182,33 @@ const mt5Templates = [
     const numB = parseInt(b.fileName.substring(0, 3), 10);
     return numA - numB;
 });
+
+const commonBenefits = [
+  {
+    icon: Send,
+    title: "Classes on Telegram",
+    description: "All live and individual mentorship sessions are conducted via Telegram for smooth communication and real-time learning."
+  },
+  {
+    icon: Video,
+    title: "Class Recordings",
+    description: "Every session is recorded — watch anytime and never miss a lesson."
+  },
+  {
+    icon: Wallet,
+    title: "Flexible Payments",
+    description: "No need to pay all at once! Easy instalment plans are available to make it simple and stress-free."
+  },
+  {
+    icon: Gift,
+    title: "After Completing the Orderflow Mentorship",
+    description: "Get exclusive access to the best Sri Lankan Orderflow Discord community and receive 14GB of premium English mentorship content from top professional traders on Google Drive.",
+    subPoints: [
+      "Get exclusive access to the best Sri Lankan Orderflow Discord community — connect, discuss, and grow with active traders.",
+      "Receive free 14GB of premium English mentorship content from top professional traders on Google Drive — your next level of learning, absolutely free."
+    ]
+  }
+];
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'home-hero');
@@ -288,6 +315,38 @@ export default function Home() {
               </CardFooter>
             </Card>
           ))}
+        </div>
+        <div className="mt-24 max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12">What's Included in Every Program</h2>
+          <div className="grid gap-10 md:grid-cols-2">
+            {commonBenefits.slice(0, 3).map((benefit) => (
+              <div key={benefit.title} className="flex items-start gap-4">
+                <div className="flex-shrink-0 bg-primary/10 text-primary rounded-md h-12 w-12 flex items-center justify-center">
+                  <benefit.icon className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground">{benefit.title}</h3>
+                  <p className="mt-1 text-muted-foreground">{benefit.description}</p>
+                </div>
+              </div>
+            ))}
+             <div className="md:col-span-2 flex items-start gap-4 p-6 bg-card rounded-lg border">
+                <div className="flex-shrink-0 bg-primary/10 text-primary rounded-md h-12 w-12 flex items-center justify-center">
+                  <Gift className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground">After Completing the Orderflow Mentorship</h3>
+                   <ul className="mt-2 space-y-3">
+                    {commonBenefits[3].subPoints?.map((point, index) => (
+                       <li key={index} className="flex items-start">
+                         <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                         <span className="text-muted-foreground">{point}</span>
+                       </li>
+                    ))}
+                   </ul>
+                </div>
+              </div>
+          </div>
         </div>
       </section>
       
@@ -561,3 +620,5 @@ export default function Home() {
     </>
   );
 }
+
+    
