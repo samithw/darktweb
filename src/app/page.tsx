@@ -13,7 +13,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-
+import Logo from '../../../public/images/dt-logo.jpg';
 import { Award, Target, Eye, CheckCircle, Gem, Users, Library, Mail, Phone, MapPin } from 'lucide-react';
 
 // Data for sections
@@ -104,11 +104,16 @@ const formSchema = z.object({
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 
+const sierraChartTemplates = Array.from({ length: 22 }, (_, i) => ({
+  name: `Chart Template ${i + 1}`,
+  imageUrl: `https://picsum.photos/seed/sierra${i + 1}/400/300`,
+  description: `A brief description for chart template ${i + 1}.`,
+  imageHint: 'chart template'
+}));
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'home-hero');
   const aboutImage = PlaceHolderImages.find((img) => img.id === 'about-us');
-  const sierraImage = PlaceHolderImages.find((img) => img.id === 'sierra-chart-template');
   const atasImage = PlaceHolderImages.find((img) => img.id === 'atas-template');
   const mt5Image = PlaceHolderImages.find((img) => img.id === 'mt5-template');
 
@@ -217,43 +222,40 @@ export default function Home() {
       
       {/* Sierra Chart Section */}
       <section id="sierra-chart-templates" className="bg-card text-card-foreground">
-          <div className="container mx-auto px-4 py-16 sm:py-24">
-            <div className="text-center">
-                <h1 className="text-4xl font-extrabold tracking-tight font-headline sm:text-5xl">
-                Sierra Chart Templates
-                </h1>
-                <p className="mt-4 max-w-2xl mx-auto text-xl text-muted-foreground">
-                Optimize your trading workflow with our professionally designed Sierra Chart templates.
-                </p>
-            </div>
-            <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div className="text-lg text-muted-foreground space-y-6">
-                <p>Unlock advanced market analysis with our custom Sierra Chart templates. Designed by professional traders, these templates are built to give you a clear, actionable view of order flow, volume profiles, and market dynamics.</p>
-                <ul className="space-y-3 list-disc list-inside">
-                    <li>Visualize key liquidity zones and auction areas.</li>
-                    <li>Track real-time delta and absorption signals.</li>
-                    <li>Integrate VWAP and standard deviation bands seamlessly.</li>
-                    <li>Ready to use out-of-the-box for immediate impact.</li>
-                </ul>
-                <p>Stop guessing and start seeing the market with clarity. Our templates are the perfect tool for traders who are serious about mastering order flow.</p>
-                <Button asChild size="lg" className="mt-4">
-                    <Link href="#contact">Get Templates</Link>
-                </Button>
-                </div>
-                <div>
-                {sierraImage && (
-                    <Image
-                    src={sierraImage.imageUrl}
-                    alt={sierraImage.description}
-                    width={800}
-                    height={600}
-                    className="rounded-lg shadow-2xl"
-                    data-ai-hint={sierraImage.imageHint}
-                    />
-                )}
-                </div>
-            </div>
+        <div className="container mx-auto px-4 py-16 sm:py-24">
+          <div className="text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight font-headline sm:text-5xl">
+              Sierra Chart Templates
+            </h1>
+            <p className="mt-4 max-w-2xl mx-auto text-xl text-muted-foreground">
+              Optimize your trading workflow with our professionally designed Sierra Chart templates.
+            </p>
           </div>
+          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {sierraChartTemplates.map((template) => (
+              <Card key={template.name} className="overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="aspect-w-4 aspect-h-3">
+                    <Image
+                      src={template.imageUrl}
+                      alt={template.name}
+                      width={400}
+                      height={300}
+                      className="object-cover"
+                      data-ai-hint={template.imageHint}
+                    />
+                  </div>
+                  <div className="p-4">
+                    <CardTitle className="text-lg">{template.name}</CardTitle>
+                    <CardDescription className="mt-2 text-sm">
+                      {template.description}
+                    </CardDescription>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ATAS Section */}
@@ -471,3 +473,5 @@ export default function Home() {
     </>
   );
 }
+
+    
