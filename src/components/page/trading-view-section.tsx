@@ -202,6 +202,13 @@ export default function TradingViewSection() {
                     <li>Institutional-style charting setups</li>
                 </ul>
               </div>
+              <div className="space-y-4 pt-4">
+                  <div className="flex items-baseline gap-4">
+                    <span className="text-4xl font-bold text-foreground">4500 LKR</span>
+                    <span className="text-xl font-medium text-muted-foreground line-through">4950 LKR</span>
+                  </div>
+                  <p className="text-sm text-green-400 font-semibold">Special Offer!</p>
+              </div>
               <div>
                 <Button asChild size="lg" className="mt-4 animate-pulse">
                   <Link href="#contact">🚀 Trade smarter, not harder.</Link>
