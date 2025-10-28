@@ -52,13 +52,14 @@ export default function TradingViewSection() {
       return;
     }
 
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap());
-
     const onSelect = (api: CarouselApi) => {
-      setCurrent(api.selectedScrollSnap());
+      if (api) {
+        setCurrent(api.selectedScrollSnap());
+      }
     };
 
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
     api.on('select', onSelect);
 
     return () => {
@@ -67,9 +68,7 @@ export default function TradingViewSection() {
   }, [api]);
 
   const scrollTo = (index: number) => {
-    if (api) {
-      api.scrollTo(index);
-    }
+    api?.scrollTo(index);
   }
 
   return (
@@ -106,37 +105,39 @@ export default function TradingViewSection() {
         </div>
 
         <div>
-            <Carousel
-                setApi={setApi}
-                plugins={[plugin.current]}
-                className="w-full relative"
-                onMouseEnter={plugin.current.stop}
-                onMouseLeave={plugin.current.reset}
-            >
-                <CarouselContent>
-                {indicatorImages.map((image, index) => (
-                    <CarouselItem key={index} className="relative">
-                    <Card className="overflow-hidden">
-                        <CardContent className="p-0">
-                            <Image
-                                src={image.src}
-                                alt={image.alt}
-                                width={image.width}
-                                height={image.height}
-                                className="w-full h-auto object-cover"
-                                data-ai-hint={image.hint}
-                            />
-                        </CardContent>
-                    </Card>
-                    </CarouselItem>
-                ))}
-                </CarouselContent>
-                 <div className="absolute top-4 left-0 right-0 p-4">
-                    <p className="text-left text-primary font-semibold text-lg bg-black/50 py-1 px-5 rounded">
+            <div className="relative">
+                <Carousel
+                    setApi={setApi}
+                    plugins={[plugin.current]}
+                    className="w-full"
+                    onMouseEnter={plugin.current.stop}
+                    onMouseLeave={plugin.current.reset}
+                >
+                    <CarouselContent>
+                    {indicatorImages.map((image, index) => (
+                        <CarouselItem key={index}>
+                        <Card className="overflow-hidden border-0 rounded-b-none">
+                            <CardContent className="p-0">
+                                <Image
+                                    src={image.src}
+                                    alt={image.alt}
+                                    width={image.width}
+                                    height={image.height}
+                                    className="w-full h-auto object-cover"
+                                    data-ai-hint={image.hint}
+                                />
+                            </CardContent>
+                        </Card>
+                        </CarouselItem>
+                    ))}
+                    </CarouselContent>
+                </Carousel>
+                <div className="relative p-4 rounded-b-lg -mt-1 bg-gradient-to-t from-black to-black/80">
+                    <p className="text-left text-primary font-semibold text-lg py-1 px-5">
                         A next-level volume indicator using true bid/ask data to reveal real market pressure.
                     </p>
                 </div>
-            </Carousel>
+            </div>
            
             <div className="flex justify-center gap-2 mt-4">
                 {Array.from({ length: count }).map((_, index) => (
