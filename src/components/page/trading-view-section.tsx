@@ -107,7 +107,7 @@ export default function TradingViewSection() {
             <Carousel
                 setApi={setApi}
                 plugins={[plugin.current]}
-                className="w-full"
+                className="w-full relative"
                 onMouseEnter={plugin.current.stop}
                 onMouseLeave={plugin.current.reset}
             >
@@ -129,12 +129,13 @@ export default function TradingViewSection() {
                     </CarouselItem>
                 ))}
                 </CarouselContent>
-                <div className="absolute bottom-4 left-0 right-0">
-                    <p className="text-center text-primary font-semibold text-lg bg-black/50 py-1 rounded">
+                 <div className="absolute bottom-4 left-0 right-0">
+                    <p className="text-left text-primary font-semibold text-lg bg-black/50 py-1 px-5 rounded">
                         A next-level volume indicator using true bid/ask data to reveal real market pressure.
                     </p>
                 </div>
             </Carousel>
+           
             <div className="flex justify-center gap-2 mt-4">
                 {Array.from({ length: count }).map((_, index) => (
                     <button
