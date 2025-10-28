@@ -14,6 +14,7 @@ import {
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { Check } from 'lucide-react';
 
 const indicatorImages = [
   {
@@ -47,15 +48,18 @@ export default function TradingViewSection() {
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
 
+  const scrollTo = (index: number) => {
+    if (api) {
+      api.scrollTo(index);
+    }
+  }
+
   React.useEffect(() => {
     if (!api) {
       return;
     }
-
     const onSelect = (api: CarouselApi) => {
-      if (api) {
-        setCurrent(api.selectedScrollSnap());
-      }
+      setCurrent(api.selectedScrollSnap());
     };
 
     setCount(api.scrollSnapList().length);
@@ -66,10 +70,6 @@ export default function TradingViewSection() {
       api.off('select', onSelect);
     };
   }, [api]);
-
-  const scrollTo = (index: number) => {
-    api?.scrollTo(index);
-  }
 
   return (
     <section id="trading-view" className="container mx-auto px-4 py-16 sm:py-24">
@@ -153,6 +153,48 @@ export default function TradingViewSection() {
                     </button>
                 ))}
             </div>
+        </div>
+      </div>
+      
+      <div className="mt-24 grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-card p-8 rounded-xl shadow-2xl border border-primary/20">
+        <div className="order-2 md:order-1 space-y-6">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground">
+            📊 Upgrade Your Trading Experience with TradingView Premium
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Stop limiting your analysis with the free plan! With TradingView Premium, you get faster data, more charts, and powerful features that professional traders rely on every day.
+          </p>
+          <div>
+            <h3 className="text-xl font-semibold text-primary mb-4">🔥 Premium Benefits:</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start"><Check className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" /> <span className="text-muted-foreground">8 charts in one layout</span></li>
+              <li className="flex items-start"><Check className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" /> <span className="text-muted-foreground">Real-time data with zero ads</span></li>
+              <li className="flex items-start"><Check className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" /> <span className="text-muted-foreground">Save unlimited layouts & indicators</span></li>
+              <li className="flex items-start"><Check className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" /> <span className="text-muted-foreground">Set multiple alerts and manage trades faster</span></li>
+              <li className="flex items-start"><Check className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" /> <span className="text-muted-foreground">Priority support and smoother performance</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-primary mb-4">💎 Perfect for:</h3>
+             <ul className="space-y-3 list-disc list-inside text-muted-foreground">
+                <li>Forex and Orderflow traders</li>
+                <li>Volume and CVD analysis</li>
+                <li>Institutional-style charting setups</li>
+            </ul>
+          </div>
+           <Button asChild size="lg" className="mt-4 animate-pulse">
+            <Link href="#contact">🚀 Trade smarter, not harder.</Link>
+          </Button>
+        </div>
+        <div className="order-1 md:order-2">
+            <Image
+                src="/images/trading-view/tradingview-premium-banner_800x400.jpg"
+                alt="TradingView Premium Banner"
+                width={800}
+                height={400}
+                className="w-full h-auto object-cover rounded-lg shadow-lg"
+                data-ai-hint="trading analysis"
+            />
         </div>
       </div>
     </section>
