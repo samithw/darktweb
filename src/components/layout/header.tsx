@@ -15,6 +15,7 @@ const navLinks = [
   { href: '#sierra-chart-templates', label: 'Sierra Chart' },
   { href: '#atas-templates', label: 'ATAS' },
   { href: '#mt5-templates', label: 'MT5' },
+  { href: '#trading-view', label: 'Trading View'},
   { href: '#about', label: 'About' },
   { href: '#contact', label: 'Contact' },
 ];
