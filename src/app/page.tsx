@@ -162,7 +162,7 @@ const mt5Templates = [
     { fileName: "111-vwap-free_800x406.jpg", description: "VWAP Template, Price LKR Free" },
     { fileName: "112-average-volume-pro-free_800x406.jpg", description: "Average volume Pro Template, Price LKR free" },
     { fileName: "113-volume-profile-pro-999_800x406.jpg", description: "Volume profile Pro Template, Price LKR 999" },
-    { fileName: "114-vwap-d-wm-free_800x410.jpg", description: "Vwap DWM Template, Price LKR Free" },
+    { fileName: "114-vwap-d-wm-free_800x406.jpg", description: "Vwap DWM Template, Price LKR Free" },
     { fileName: "115-darktrader-vwap-999_800x401.jpg", description: "Darktrader Vwap Template, Price LKR 999" },
 ].map(template => {
     const parts = template.description.split(', Price ');
@@ -182,6 +182,30 @@ const mt5Templates = [
     const numB = parseInt(b.fileName.substring(0, 3), 10);
     return numA - numB;
 });
+
+const atasTemplates = [
+  { fileName: "101-footprint-dp-free_800x428.jpg", description: "Footprint DP Template, Price LKR free" },
+  { fileName: "102-footprint-da-free_800x428.jpg", description: "Footprint DA Template, Price LKR free" },
+  { fileName: "103-footprint-v-free_800x428.jpg", description: "Footprint + V. Template, Price LKR free" }
+].map(template => {
+    const parts = template.description.split(', Price ');
+    const name = parts[0];
+    const price = parts[1];
+    const isFree = price.toLowerCase().includes('free');
+    return {
+        ...template,
+        name,
+        price: isFree ? 'Download for free' : price,
+        isFree,
+        imageUrl: `/images/atas-templates/${template.fileName}`,
+        imageHint: 'atas template'
+    };
+}).sort((a, b) => {
+    const numA = parseInt(a.fileName.substring(0, 3), 10);
+    const numB = parseInt(b.fileName.substring(0, 3), 10);
+    return numA - numB;
+});
+
 
 const commonBenefits = [
   {
@@ -408,33 +432,40 @@ export default function Home() {
             Gain a competitive edge with our powerful ATAS templates, built for precision and clarity.
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            {atasImage && (
-              <Image
-                src={atasImage.imageUrl}
-                alt={atasImage.description}
-                width={800}
-                height={600}
-                className="rounded-lg shadow-2xl"
-                data-ai-hint={atasImage.imageHint}
-              />
-            )}
+        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {atasTemplates.map((template) => (
+              <Card key={template.fileName} className="overflow-hidden flex flex-col">
+                <CardContent className="p-0 flex flex-col flex-grow">
+                  <div className="aspect-w-16 aspect-h-9">
+                    <Image
+                      src={template.imageUrl}
+                      alt={template.name}
+                      width={800}
+                      height={428}
+                      className="object-cover w-full h-full"
+                      data-ai-hint={template.imageHint}
+                    />
+                  </div>
+                  <div className="p-4 flex flex-col flex-grow justify-between">
+                    <CardDescription className="text-base text-card-foreground">
+                      {template.name}
+                    </CardDescription>
+                    <div className="mt-4">
+                       {template.isFree ? (
+                          <Link href="#" className={cn(badgeVariants({ variant: 'default' }), 'text-sm')}>
+                            {template.price}
+                          </Link>
+                       ) : (
+                         <Badge variant="default" className="text-sm">
+                           {template.price}
+                         </Badge>
+                       )}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
-          <div className="text-lg text-muted-foreground space-y-6">
-            <p>Elevate your analysis on the ATAS platform. Our templates are engineered to provide deep market insights, focusing on order flow and volume analysis to help you make more informed trading decisions.</p>
-            <ul className="space-y-3 list-disc list-inside">
-              <li>Pre-configured smart tape and DOM for efficient reading.</li>
-              <li>Customizable footprint charts to spot absorption and exhaustion.</li>
-              <li>Detailed volume cluster analysis for identifying key levels.</li>
-              <li>User-friendly layouts that reduce noise and improve focus.</li>
-            </ul>
-            <p>Transform your ATAS workspace into a professional-grade analysis station and stay ahead of the market.</p>
-            <Button asChild size="lg" className="mt-4">
-              <Link href="#contact">Get Templates</Link>
-            </Button>
-          </div>
-        </div>
       </section>
 
       {/* MT5 Section */}
@@ -620,5 +651,3 @@ export default function Home() {
     </>
   );
 }
-
-    
