@@ -67,7 +67,9 @@ export default function TradingViewSection() {
   }, [api]);
 
   const scrollTo = (index: number) => {
-    api?.scrollTo(index);
+    if (api) {
+      api.scrollTo(index);
+    }
   }
 
   return (
@@ -129,7 +131,7 @@ export default function TradingViewSection() {
                     </CarouselItem>
                 ))}
                 </CarouselContent>
-                 <div className="absolute bottom-4 left-0 right-0">
+                 <div className="absolute top-4 left-0 right-0 p-4">
                     <p className="text-left text-primary font-semibold text-lg bg-black/50 py-1 px-5 rounded">
                         A next-level volume indicator using true bid/ask data to reveal real market pressure.
                     </p>
