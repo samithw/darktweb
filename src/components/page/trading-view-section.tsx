@@ -86,77 +86,79 @@ export default function TradingViewSection() {
         </p>
       </div>
 
-      <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground">
-                Real Cumulative Delta Volume (CDV) Indicator
-            </h2>
-            <p className="text-sm text-muted-foreground">Version 1.0 | Developer: Darktrader</p>
-            
-            <div className="space-y-4 text-lg text-muted-foreground">
-                <h3 className="text-xl font-semibold text-primary">🔥 Why Every Serious Trader Needs the Real CDV</h3>
-                <p>
-                <span className="font-semibold text-foreground">See What Most Traders Miss</span><br />
-                Most traders rely on volume indicators that only show how much volume traded — but not who controlled the move. Was it aggressive buyers or dominant sellers? That’s the question ordinary tools can’t answer.
-                </p>
-                <p>
-                The Real CDV Indicator uncovers that hidden layer of market truth by revealing the real-time strength and intent of market participants.
-                </p>
-            </div>
-             <Button asChild size="lg" className="mt-6">
-                <Link href="#contact">Get The Indicator</Link>
-            </Button>
-        </div>
+      <div className="mt-16 bg-card p-8 rounded-xl shadow-2xl border border-primary/20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground">
+                  Real Cumulative Delta Volume (CDV) Indicator
+              </h2>
+              <p className="text-sm text-muted-foreground">Version 1.0 | Developer: Darktrader</p>
+              
+              <div className="space-y-4 text-lg text-muted-foreground">
+                  <h3 className="text-xl font-semibold text-primary">🔥 Why Every Serious Trader Needs the Real CDV</h3>
+                  <p>
+                  <span className="font-semibold text-foreground">See What Most Traders Miss</span><br />
+                  Most traders rely on volume indicators that only show how much volume traded — but not who controlled the move. Was it aggressive buyers or dominant sellers? That’s the question ordinary tools can’t answer.
+                  </p>
+                  <p>
+                  The Real CDV Indicator uncovers that hidden layer of market truth by revealing the real-time strength and intent of market participants.
+                  </p>
+              </div>
+               <Button asChild size="lg" className="mt-6">
+                  <Link href="#contact">Get The Indicator</Link>
+              </Button>
+          </div>
 
-        <div>
-            <div className="relative">
-                <Carousel
-                    setApi={setApi}
-                    plugins={[plugin.current]}
-                    className="w-full"
-                    onMouseEnter={plugin.current.stop}
-                    onMouseLeave={plugin.current.reset}
-                >
-                    <CarouselContent>
-                    {indicatorImages.map((image, index) => (
-                        <CarouselItem key={index}>
-                        <Card className="overflow-hidden border-0 rounded-b-none">
-                            <CardContent className="p-0">
-                                <Image
-                                    src={image.src}
-                                    alt={image.alt}
-                                    width={image.width}
-                                    height={image.height}
-                                    className="w-full h-auto object-cover"
-                                    data-ai-hint={image.hint}
-                                />
-                            </CardContent>
-                        </Card>
-                        </CarouselItem>
-                    ))}
-                    </CarouselContent>
-                </Carousel>
-                <div className="relative p-4 rounded-b-lg -mt-1 bg-gradient-to-t from-black to-black/80">
-                    <p className="text-left text-primary font-semibold text-lg py-1 px-5">
-                        A next-level volume indicator using true bid/ask data to reveal real market pressure.
-                    </p>
-                </div>
-            </div>
-           
-            <div className="flex justify-center gap-2 mt-4">
-                {Array.from({ length: count }).map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => scrollTo(index)}
-                        className={cn(
-                            "h-2.5 w-8 rounded-full transition-colors",
-                            current === index ? "bg-primary" : "bg-muted hover:bg-muted-foreground/50"
-                        )}
-                    >
-                      <span className="sr-only">Go to slide {index + 1}</span>
-                    </button>
-                ))}
-            </div>
+          <div>
+              <div className="relative">
+                  <Carousel
+                      setApi={setApi}
+                      plugins={[plugin.current]}
+                      className="w-full"
+                      onMouseEnter={plugin.current.stop}
+                      onMouseLeave={plugin.current.reset}
+                  >
+                      <CarouselContent>
+                      {indicatorImages.map((image, index) => (
+                          <CarouselItem key={index}>
+                          <Card className="overflow-hidden border-0 rounded-b-none">
+                              <CardContent className="p-0">
+                                  <Image
+                                      src={image.src}
+                                      alt={image.alt}
+                                      width={image.width}
+                                      height={image.height}
+                                      className="w-full h-auto object-cover"
+                                      data-ai-hint={image.hint}
+                                  />
+                              </CardContent>
+                          </Card>
+                          </CarouselItem>
+                      ))}
+                      </CarouselContent>
+                  </Carousel>
+                  <div className="relative p-4 rounded-b-lg -mt-1 bg-gradient-to-t from-black to-black/80">
+                      <p className="text-left text-primary font-semibold text-lg py-1 px-5">
+                          A next-level volume indicator using true bid/ask data to reveal real market pressure.
+                      </p>
+                  </div>
+              </div>
+             
+              <div className="flex justify-center gap-2 mt-4">
+                  {Array.from({ length: count }).map((_, index) => (
+                      <button
+                          key={index}
+                          onClick={() => scrollTo(index)}
+                          className={cn(
+                              "h-2.5 w-8 rounded-full transition-colors",
+                              current === index ? "bg-primary" : "bg-muted hover:bg-muted-foreground/50"
+                          )}
+                      >
+                        <span className="sr-only">Go to slide {index + 1}</span>
+                      </button>
+                  ))}
+              </div>
+          </div>
         </div>
       </div>
       
@@ -211,4 +213,3 @@ export default function TradingViewSection() {
     </section>
   );
 }
-
