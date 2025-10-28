@@ -209,10 +209,11 @@ export default function TradingViewSection() {
                   </div>
                   <p className="text-sm text-green-400 font-semibold">Special Offer!</p>
               </div>
-              <div>
+              <div className="flex items-center gap-4">
                 <Button asChild size="lg" className="mt-4 animate-pulse">
-                  <Link href="#contact">🚀 Trade smarter, not harder.</Link>
+                  <Link href="#contact">Order now</Link>
                 </Button>
+                <p className='mt-4'>🚀 Trade smarter, not harder.</p>
               </div>
             </div>
         </div>
