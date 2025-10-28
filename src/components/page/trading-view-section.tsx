@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -6,13 +7,13 @@ import Autoplay from 'embla-carousel-autoplay';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
+  CarouselApi,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Button } from '../ui/button';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 const indicatorImages = [
   {
@@ -42,15 +43,41 @@ export default function TradingViewSection() {
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
   );
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    const onSelect = (api: CarouselApi) => {
+      setCurrent(api.selectedScrollSnap());
+    };
+
+    api.on('select', onSelect);
+
+    return () => {
+      api.off('select', onSelect);
+    };
+  }, [api]);
+
+  const scrollTo = (index: number) => {
+    api?.scrollTo(index);
+  }
 
   return (
     <section id="trading-view" className="container mx-auto px-4 py-16 sm:py-24">
       <div className="text-center">
         <h1 className="text-4xl font-extrabold tracking-tight font-headline sm:text-5xl">
-          TradingView Indicators
+        TradingView Indicators & Packages
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-xl text-muted-foreground">
-          Unlock market secrets with our exclusive TradingView indicators.
+          Unlock market secrets with our exclusive TradingView indicators & packages.
         </p>
       </div>
 
@@ -78,6 +105,7 @@ export default function TradingViewSection() {
 
         <div>
             <Carousel
+                setApi={setApi}
                 plugins={[plugin.current]}
                 className="w-full"
                 onMouseEnter={plugin.current.stop}
@@ -85,7 +113,7 @@ export default function TradingViewSection() {
             >
                 <CarouselContent>
                 {indicatorImages.map((image, index) => (
-                    <CarouselItem key={index}>
+                    <CarouselItem key={index} className="relative">
                     <Card className="overflow-hidden">
                         <CardContent className="p-0">
                             <Image
@@ -101,12 +129,26 @@ export default function TradingViewSection() {
                     </CarouselItem>
                 ))}
                 </CarouselContent>
-                <CarouselPrevious className="hidden sm:flex" />
-                <CarouselNext className="hidden sm:flex" />
+                <div className="absolute bottom-4 left-0 right-0">
+                    <p className="text-center text-primary font-semibold text-lg bg-black/50 py-1 rounded">
+                        A next-level volume indicator using true bid/ask data to reveal real market pressure.
+                    </p>
+                </div>
             </Carousel>
-            <p className="mt-4 text-center text-muted-foreground italic">
-                A next-level volume indicator using true bid/ask data to reveal real market pressure.
-            </p>
+            <div className="flex justify-center gap-2 mt-4">
+                {Array.from({ length: count }).map((_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => scrollTo(index)}
+                        className={cn(
+                            "h-2.5 w-8 rounded-full transition-colors",
+                            current === index ? "bg-primary" : "bg-muted hover:bg-muted-foreground/50"
+                        )}
+                    >
+                      <span className="sr-only">Go to slide {index + 1}</span>
+                    </button>
+                ))}
+            </div>
         </div>
       </div>
     </section>

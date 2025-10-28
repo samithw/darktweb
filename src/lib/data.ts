@@ -62,7 +62,7 @@ export const mentorships = [
     icon: Library,
     title: 'Self-Study Orderflow Mentorship',
     description: 'Learn at your own pace with lifetime access to our content.',
-    price: 'One-Time Payment',
+    price: '15,000 LKR',
     features: [
       'Full access to private Google Drive content',
       'Over 100 short, structured video lessons',
