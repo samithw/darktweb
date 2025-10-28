@@ -137,7 +137,7 @@ export const mt5Templates = [
     { fileName: "111-vwap-free_800x406.jpg", description: "VWAP Template, Price LKR Free" },
     { fileName: "112-average-volume-pro-free_800x406.jpg", description: "Average volume Pro Template, Price LKR free" },
     { fileName: "113-volume-profile-pro-999_800x406.jpg", description: "Volume profile Pro Template, Price LKR 999" },
-    { fileName: "114-vwap-dwm-free_800x410..jpg", description: "Vwap DWM Template, Price LKR Free" },
+    { fileName: "114-vwap-dwm-free_800x410.jpg", description: "Vwap DWM Template, Price LKR Free" },
     { fileName: "115-darktrader-vwap-999_800x401.jpg", description: "Darktrader Vwap Template, Price LKR 999" },
 ].map(template => {
     const parts = template.description.split(', Price ');
