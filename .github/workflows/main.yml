@@ -1,0 +1,35 @@
+name: Build and Deploy Static Next.js Site
+
+on:
+  #push:
+    #branches:
+      #- main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Check out your code
+      - uses: actions/checkout@v4
+
+      # Step 2: Use Node.js 18 (Next.js supports 18+)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 💥 Step 4: Build static site (REMOVED 'npm run export')
+      - name: Build Static Site
+        run: npm run build
+
+      # Step 5: Deploy the /out folder to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
