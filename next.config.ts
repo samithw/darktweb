@@ -1,9 +1,12 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next'
+
+const isProd = process.env.NODE_ENV === 'production'
+
+// 👇 replace 'myapp-static' with your actual repo name
+const repoName = 'darktweb2'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  basePath: '/darktweb2',
-  output: 'export',
+  output: 'export', // <-- enables static export
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -11,7 +14,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    unoptimized: true,
+    unoptimized: true, // <-- required for static export (no image optimization server)
     remotePatterns: [
       {
         protocol: 'https',
@@ -33,6 +36,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-};
+  basePath: isProd ? `/${repoName}` : '', // <-- ensures GitHub Pages paths work
+  assetPrefix: isProd ? `/${repoName}/` : '', // <-- fixes static assets path
+}
 
-export default nextConfig;
+export default nextConfig
