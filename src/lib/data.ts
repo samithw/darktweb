@@ -149,7 +149,7 @@ export const mt5Templates = [
         name,
         price: isFree ? 'Download for free' : price,
         isFree,
-        imageUrl: `/images/mt5-templates/${template.fileName}`,
+        imageUrl: `./images/mt5-templates/${template.fileName}`,
         imageHint: 'mt5 template'
     };
 }).sort((a, b) => {
