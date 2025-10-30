@@ -114,7 +114,7 @@ export const sierraChartTemplates = [
     name,
     price: isFree ? 'Download for free' : price,
     isFree,
-    imageUrl: `/images/sierra-charts/${template.fileName}`,
+    imageUrl: `./images/sierra-charts/${template.fileName}`,
     imageHint: 'chart template'
   };
 }).sort((a, b) => {
