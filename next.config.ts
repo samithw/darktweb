@@ -1,9 +1,9 @@
 import type { NextConfig } from 'next'
 
 const isProd = process.env.NODE_ENV === 'production'
-
+console.log(isProd)
 // 👇 replace 'myapp-static' with your actual repo name
-const repoName = 'darktwebssg'
+const repoName = 'darktweb2'
 
 const nextConfig: NextConfig = {
   output: 'export', // <-- enables static export
