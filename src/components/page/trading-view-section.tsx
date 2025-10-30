@@ -18,21 +18,21 @@ import { Check } from 'lucide-react';
 
 const indicatorImages = [
   {
-    src: '/images/trading-view/cdv-preview1_800x433.jpg',
+    src: './images/trading-view/cdv-preview1_800x433.jpg',
     alt: 'Real CDV Indicator Preview 1',
     width: 800,
     height: 433,
     hint: 'trading indicator chart'
   },
   {
-    src: '/images/trading-view/cdv-preview2_800x431.jpg',
+    src: './images/trading-view/cdv-preview2_800x431.jpg',
     alt: 'Real CDV Indicator Preview 2',
     width: 800,
     height: 431,
     hint: 'volume analysis graph'
   },
   {
-    src: '/images/trading-view/cdv-preview3_800x432.jpg',
+    src: './images/trading-view/cdv-preview3_800x432.jpg',
     alt: 'Real CDV Indicator Preview 3',
     width: 800,
     height: 432,
@@ -167,7 +167,7 @@ export default function TradingViewSection() {
             <div className="md:order-last">
                 <div className="aspect-[3/4] w-full overflow-hidden rounded-lg shadow-lg">
                     <Image
-                        src="/images/trading-view/tradingview-premium-banner_800x400.png"
+                        src="./images/trading-view/tradingview-premium-banner_800x400.png"
                         alt="TradingView Premium Banner"
                         width={800}
                         height={400}

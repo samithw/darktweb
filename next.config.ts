@@ -40,4 +40,4 @@ const nextConfig: NextConfig = {
   assetPrefix: isProd ? `/${repoName}/` : '', // <-- fixes static assets path
 }
 
-export default nextConfig
+export default nextConfig;

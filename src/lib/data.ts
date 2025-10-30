@@ -172,7 +172,7 @@ export const atasTemplates = [
         name,
         price: isFree ? 'Download for free' : price,
         isFree,
-        imageUrl: `/images/atas-templates/${template.fileName}`,
+        imageUrl: `./images/atas-templates/${template.fileName}`,
         imageHint: 'atas template'
     };
 }).sort((a, b) => {
