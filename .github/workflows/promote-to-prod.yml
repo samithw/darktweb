@@ -1,0 +1,25 @@
+name: Promote to darktwebssg (Production)
+
+on:
+  workflow_dispatch:  # manual trigger - run it from the Actions tab
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout darktweb2 (staging)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # ensure full history is available
+
+      - name: Push to darktwebssg (production)
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+
+          # Add production repo as a new remote
+          git remote add prod https://samithw:${{ secrets.PROD_TOKEN }}@github.com/samithw/darktwebssg.git
+
+          # Push staging main branch to production main branch
+          git push prod main --force
