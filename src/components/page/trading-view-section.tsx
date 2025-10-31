@@ -170,15 +170,14 @@ export default function TradingViewSection() {
       <div className="mt-24 bg-card p-8 rounded-xl shadow-2xl border border-primary/20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="md:order-last">
-                <div className="w-full relative pb-[50%] md:pb-[75%]">
-                    <Image
-                        src="./images/trading-view/tradingview-premium-banner_800x400.png"
-                        alt="TradingView Premium Banner"
-                        fill
-                        className="w-full h-full absolute top-0 left-0 object-cover rounded-lg shadow-lg"
-                        data-ai-hint="trading analysis"
-                    />
-                </div>
+                <Image
+                    src="./images/trading-view/tradingview-desktop-reaches-stable-preview.jpg"
+                    alt="TradingView Premium Banner"
+                    width={800}
+                    height={400}
+                    className="w-full h-auto object-cover rounded-lg shadow-lg"
+                    data-ai-hint="trading analysis"
+                />
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl font-bold tracking-tight text-foreground">
