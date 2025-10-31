@@ -104,6 +104,11 @@ export default function TradingViewSection() {
                   The Real CDV Indicator uncovers that hidden layer of market truth by revealing the real-time strength and intent of market participants.
                   </p>
               </div>
+               <div className="space-y-4 pt-4">
+                  <div className="flex items-baseline gap-4">
+                    <span className="text-4xl font-bold text-foreground">2999 LKR</span>
+                  </div>
+              </div>
                <Button asChild size="lg" className="mt-6">
                   <Link href="#contact">Get The Indicator</Link>
               </Button>
@@ -165,13 +170,12 @@ export default function TradingViewSection() {
       <div className="mt-24 bg-card p-8 rounded-xl shadow-2xl border border-primary/20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="md:order-last">
-                <div className="aspect-[3/4] w-full overflow-hidden rounded-lg shadow-lg">
+                <div className="w-full relative pb-[50%] md:pb-[75%]">
                     <Image
                         src="./images/trading-view/tradingview-premium-banner_800x400.png"
                         alt="TradingView Premium Banner"
-                        width={800}
-                        height={400}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="w-full h-full absolute top-0 left-0 object-cover rounded-lg shadow-lg"
                         data-ai-hint="trading analysis"
                     />
                 </div>
