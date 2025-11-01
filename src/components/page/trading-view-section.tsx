@@ -107,7 +107,9 @@ export default function TradingViewSection() {
                <div className="space-y-4 pt-4">
                   <div className="flex items-baseline gap-4">
                     <span className="text-4xl font-bold text-foreground">3999 LKR</span>
+                    <span className="text-xl font-medium text-muted-foreground line-through">4999 LKR</span>
                   </div>
+                  <p className="text-sm text-green-400 font-semibold">Special Offer!</p>
               </div>
                <Button asChild size="lg" className="mt-6">
                   <Link href="#contact">Get The Indicator</Link>
@@ -214,7 +216,6 @@ export default function TradingViewSection() {
                 <Button asChild size="lg" className="mt-4 animate-pulse">
                   <Link href="#contact">Order now</Link>
                 </Button>
-                <p className='mt-4'>🚀 Trade smarter, not harder.</p>
               </div>
             </div>
             <div className="hidden lg:block">
