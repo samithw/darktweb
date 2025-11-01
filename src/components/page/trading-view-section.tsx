@@ -113,7 +113,7 @@ export default function TradingViewSection() {
               </div>
                <Button asChild size="lg" className="mt-6">
                   <Link href="#contact">Get The Indicator</Link>
-              </Button>
+               </Button>
           </div>
 
           <div>
@@ -213,7 +213,7 @@ export default function TradingViewSection() {
                   <p className="text-sm text-green-400 font-semibold">Special Offer!</p>
               </div>
               <div className="flex items-center gap-4">
-                <Button asChild size="lg" className="mt-4 animate-pulse">
+                <Button asChild size="lg" className="mt-4">
                   <Link href="#contact">Order now</Link>
                 </Button>
               </div>
