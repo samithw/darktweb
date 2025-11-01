@@ -2,8 +2,8 @@ import type { NextConfig } from 'next'
 
 const isProd = process.env.NODE_ENV === 'production'
 
-// 👇 replace 'myapp-static' with your actual repo name
-//const repoName = 'darktweb2'
+// 👇 uncomment for darktweb2 or origin - comment for prod
+const repoName = 'darktweb2'
 
 const nextConfig: NextConfig = {
   output: 'export', // <-- enables static export
@@ -36,8 +36,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  //basePath: isProd ? `/${repoName}` : '', // <-- ensures GitHub Pages paths work
-  //assetPrefix: isProd ? `/${repoName}/` : '', // <-- fixes static assets path 2
+  // 👇 uncomment for darktweb2 or origin - comment for prod
+  basePath: isProd ? `/${repoName}` : '', // <-- ensures GitHub Pages paths work
+  assetPrefix: isProd ? `/${repoName}/` : '', // <-- fixes static assets path 2
 }
 
 export default nextConfig
