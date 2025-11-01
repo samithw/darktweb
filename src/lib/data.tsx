@@ -1,4 +1,11 @@
-import { Award, Target, Eye, Gem, Users, Library, Mail, Phone, MapPin, Send, Video, Wallet, Gift } from 'lucide-react';
+import { Award, Target, Eye, Gem, Users, Library, Mail, Phone, MapPin, Send, Video, Wallet, Gift, Youtube, Facebook } from 'lucide-react';
+
+const TikTokIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-music">
+        <path d="M15.25 2.75a4.5 4.5 0 1 0-3.5 6.5v7.5a2.25 2.25 0 1 1-4.5 0v-9.25a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v9.25a.75.75 0 1 0 1.5 0v-7.5a4.5 4.5 0 1 0-3.5-6.5"/>
+    </svg>
+);
+
 
 export const aboutValues = [
     {
@@ -77,14 +84,19 @@ export const mentorships = [
 
 export const contactDetails = [
     { icon: Mail, text: "support@darktrader.com", href: "mailto:support@darktrader.com" },
-    { icon: Phone, text: "+1 (555) 123-4567", href: "tel:+15551234567" },
-    { icon: MapPin, text: "123 Trading Floor, Market St, New York" },
+    { icon: Phone, text: "+94760311037", href: "https://wa.me/94760311037" },
+];
+
+export const socialLinks = [
+    { icon: Youtube, href: 'https://www.youtube.com/@Dark_Trader_', handle: '@Dark_Trader_' },
+    { icon: Facebook, href: 'https://www.facebook.com/sldarktrader/', handle: 'sldarktrader' },
+    { icon: TikTokIcon, href: 'https://www.tiktok.com/@darktrader__sl', handle: '@darktrader__sl' },
 ];
 
 export const sierraChartTemplates = [
   { fileName: "101-chart-cdv-999.jpg", description: "Chart - CDV Template, Price LKR 999" },
   { fileName: "102-red-delta-dom-free.jpg", description: "Red Delta DOM Template, Price LKR free" },
-  { fileName: "103-xauusd-main-999.jpg", description: "xauusd Main Template, Price LKR 999" },
+  { fileName: "103-xauusd-main-999.jpg", description: "XAUUSD Main Template, Price LKR 999" },
   { fileName: "104-main-delta-bars-1499.jpg", description: "Main-Delta Bars Template, Price LKR 1,499" },
   { fileName: "105-real-cdv-1499.jpg", description: "Real cdv Template, Price LKR 1,499" },
   { fileName: "106-delta-by-vol-1499.jpg", description: "Delta by Vol Template, Price LKR 1,499" },

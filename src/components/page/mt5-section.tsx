@@ -1,4 +1,4 @@
-import { mt5Templates } from '@/lib/data';
+import { mt5Templates } from '@/lib/data.tsx';
 import TemplateCard from './template-card';
 
 export default function Mt5Section() {

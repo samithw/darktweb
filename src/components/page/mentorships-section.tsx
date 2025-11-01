@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Gift } from 'lucide-react';
-import { mentorships, commonBenefits } from '@/lib/data';
+import { mentorships, commonBenefits } from '@/lib/data.tsx';
 
 export default function MentorshipsSection() {
     return (

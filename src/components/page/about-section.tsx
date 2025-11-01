@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { aboutValues } from '@/lib/data';
+import { aboutValues } from '@/lib/data.tsx';
 
 export default function AboutSection() {
     const aboutImage = PlaceHolderImages.find((img) => img.id === 'about-us');

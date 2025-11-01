@@ -1,4 +1,4 @@
-import { sierraChartTemplates } from '@/lib/data';
+import { sierraChartTemplates } from '@/lib/data.tsx';
 import TemplateCard from './template-card';
 
 export default function SierraChartSection() {

@@ -1,4 +1,4 @@
-import { atasTemplates } from '@/lib/data';
+import { atasTemplates } from '@/lib/data.tsx';
 import TemplateCard from './template-card';
 
 export default function AtasSection() {
