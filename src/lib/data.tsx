@@ -111,7 +111,7 @@ export const mentorships = [
 ];
 
 export const contactDetails = [
-    { icon: MailIcon, text: "support@darktrader.com", href: "mailto:support@darktrader.com" },
+    { icon: MailIcon, text: "sldarktrader@gmail.com", href: "mailto:sldarktrader@gmail.com" },
     { icon: WhatsAppIcon, text: "+94760311037", href: "https://wa.me/94760311037" },
 ];
 
