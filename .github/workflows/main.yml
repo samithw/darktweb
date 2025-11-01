@@ -1,9 +1,9 @@
 name: Build and Deploy Static Next.js Site
 
 on:
-  #push:
-    #branches:
-      #- main
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
