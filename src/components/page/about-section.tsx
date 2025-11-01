@@ -21,17 +21,17 @@ export default function AboutSection() {
                         <Image
                             src={aboutImage.imageUrl}
                             alt={aboutImage.description}
-                            width={800}
-                            height={600}
-                            className="rounded-lg shadow-2xl object-cover aspect-[4/3]"
+                            width={600}
+                            height={800}
+                            className="rounded-lg shadow-2xl object-cover aspect-[3/4] mx-auto lg:mx-0"
                             data-ai-hint={aboutImage.imageHint}
                         />
                     )}
                 </div>
                 <div className="text-lg text-muted-foreground space-y-6">
                     <h2 className="text-3xl font-bold text-foreground">Our Mission</h2>
-                    <p>At Dark Trader, our mission is to empower retail traders with the institutional-grade knowledge and tools needed to navigate the financial markets successfully. We believe that understanding the real mechanics of the market—the 'why' behind price movement—is the key to consistent profitability.</p>
-                    <p>We move beyond simplistic technical indicators and price patterns to teach the foundational principles of auction market theory and order flow. Our goal is to transform aspiring traders into market professionals who can read, interpret, and act on market-generated information with confidence.</p>
+                    <p>At Dark Trader, our mission is to empower retail traders with the institutional-grade knowledge and tools needed to navigate the financial markets successfully. We believe that understanding the real mechanics of the market—the “why” behind price movement—is the key to consistent profitability.</p>
+                    <p>We specialize in Order Flow and Auction Market Theory, teaching traders to read and interpret real market activity. Our goal is to help you understand how the market truly works and trade with the mindset of a professional.</p>
                 </div>
             </div>
             <div className="mt-24">
