@@ -1,19 +1,16 @@
 import Link from 'next/link';
-import { Twitter, Youtube, Instagram } from 'lucide-react';
 import Image from 'next/image';
 
 const navLinks = [
+  { href: '#home', label: 'Home' },
   { href: '#mentorships', label: 'Mentorships' },
   { href: '#sierra-chart-templates', label: 'Sierra Chart' },
+  { href: '#atas-templates', label: 'ATAS' },
+  { href: '#mt5-templates', label: 'MT5' },
+  { href: '#trading-view', label: 'Trading View' },
   { href: '#about', label: 'About' },
   { href: '#contact', label: 'Contact' },
 ];
-
-const socialLinks = [
-    { icon: Twitter, href: '#'},
-    { icon: Youtube, href: '#'},
-    { icon: Instagram, href: '#'},
-]
 
 export default function Footer() {
   return (
@@ -34,18 +31,8 @@ export default function Footer() {
               </Link>
             ))}
           </nav>
-          <div className="flex items-center gap-4">
-            {socialLinks.map((social, index) => (
-                <Link key={index} href={social.href} className="text-muted-foreground transition-colors hover:text-primary">
-                    <social.icon className="h-5 w-5" />
-                    <span className="sr-only">Social Link</span>
-                </Link>
-            ))}
-          </div>
         </div>
       </div>
     </footer>
   );
 }
-
-    
