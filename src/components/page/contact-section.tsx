@@ -10,7 +10,7 @@ export default function ContactSection() {
                     <h1 className="text-4xl font-extrabold tracking-tight font-headline sm:text-5xl">
                         Get In Touch
                     </h1>
-                    <p className="mt-4 max-w-2xl mx-auto text-xl text-muted-foreground">
+                    <p className="mt-4 max-w-3xl mx-auto text-xl text-muted-foreground">
                         Have questions about our mentorships or templates? We're here to help.
                     </p>
                 </div>
@@ -37,9 +37,6 @@ export default function ContactSection() {
                     </div>
                     <div className="space-y-8">
                         <h2 className="text-3xl font-bold text-foreground text-center lg:text-left">Follow Us</h2>
-                         <p className="text-muted-foreground text-center lg:text-left">
-                            Stay connected and get the latest updates by following us on our social media channels.
-                        </p>
                         <div className="space-y-6">
                             {socialLinks.map((social, index) => (
                                 <div key={index} className="flex items-center gap-4">

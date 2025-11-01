@@ -106,7 +106,7 @@ export default function TradingViewSection() {
               </div>
                <div className="space-y-4 pt-4">
                   <div className="flex items-baseline gap-4">
-                    <span className="text-4xl font-bold text-foreground">2999 LKR</span>
+                    <span className="text-4xl font-bold text-foreground">3999 LKR</span>
                   </div>
               </div>
                <Button asChild size="lg" className="mt-6">

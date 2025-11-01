@@ -35,7 +35,7 @@ export default function AboutSection() {
                     <p>We specialize in Order Flow and Auction Market Theory, teaching traders to read and interpret real market activity. Our goal is to help you understand how the market truly works and trade with the mindset of a professional.</p>
                 </div>
             </div>
-            <div className="mt-24">
+            <div className="mt-24 bg-card p-8 rounded-xl shadow-2xl border border-primary/20">
                 <h2 className="text-3xl font-bold text-center text-foreground">Our Core Values</h2>
                 <div className="mt-12 grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
                     {aboutValues.map((value) => (
