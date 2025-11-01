@@ -1,4 +1,4 @@
-import { Award, Target, Eye, Gem, Users, Library, Mail, Phone, MapPin, Send, Video, Wallet, Gift, Youtube, Facebook } from 'lucide-react';
+import { Award, Target, Eye, Gem, Users, Library, Mail, Phone, MapPin, Send, Video, Wallet, Gift, Youtube, Facebook, UserCheck } from 'lucide-react';
 
 const TikTokIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-music">
@@ -209,6 +209,11 @@ export const commonBenefits = [
     icon: Wallet,
     title: "Flexible Payments",
     description: "No need to pay all at once! Easy instalment plans are available to make it simple and stress-free."
+  },
+  {
+    icon: UserCheck,
+    title: "Personal Guidance",
+    description: "I’ll personally guide and support you throughout the mentorship, ensuring all your trading questions are clearly answered."
   },
   {
     icon: Gift,

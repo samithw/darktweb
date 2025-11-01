@@ -58,7 +58,7 @@ export default function MentorshipsSection() {
             <div className="mt-24 max-w-5xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-foreground mb-12">What's Included in Every Program</h2>
                 <div className="grid gap-10 md:grid-cols-2">
-                    {commonBenefits.slice(0, 3).map((benefit) => (
+                    {commonBenefits.slice(0, 4).map((benefit) => (
                         <div key={benefit.title} className="flex items-start gap-4">
                             <div className="flex-shrink-0 bg-primary/10 text-primary rounded-md h-12 w-12 flex items-center justify-center">
                                 <benefit.icon className="h-6 w-6" />
@@ -76,7 +76,7 @@ export default function MentorshipsSection() {
                         <div>
                             <h3 className="text-xl font-semibold text-foreground">After Completing the Orderflow Mentorship</h3>
                             <ul className="mt-2 space-y-3">
-                                {commonBenefits[3].subPoints?.map((point, index) => (
+                                {commonBenefits.find(b => b.icon === Gift)?.subPoints?.map((point, index) => (
                                     <li key={index} className="flex items-start">
                                         <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
                                         <span className="text-muted-foreground">{point}</span>
