@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -5,7 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
@@ -65,6 +66,12 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] bg-black">
+                <SheetHeader>
+                    <SheetTitle className="sr-only">Menu</SheetTitle>
+                    <SheetDescription className="sr-only">
+                    Main navigation menu for the Dark Trader website.
+                    </SheetDescription>
+                </SheetHeader>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-8">
                     <Link href="/#home" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
@@ -85,5 +92,3 @@ export default function Header() {
     </header>
   );
 }
-
-    
