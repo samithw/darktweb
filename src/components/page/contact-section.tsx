@@ -55,8 +55,8 @@ export default function ContactSection() {
                                 src={contactImage.imageUrl}
                                 alt={contactImage.description}
                                 width={600}
-                                height={400}
-                                className="rounded-lg shadow-2xl object-cover w-full h-full"
+                                height={450}
+                                className="rounded-lg shadow-2xl object-cover object-right w-full h-full aspect-[4/3]"
                                 data-ai-hint={contactImage.imageHint}
                             />
                         )}
