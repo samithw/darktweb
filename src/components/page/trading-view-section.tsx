@@ -168,7 +168,7 @@ export default function TradingViewSection() {
       </div>
       
       <div className="mt-24 bg-card p-8 rounded-xl shadow-2xl border border-primary/20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl font-bold tracking-tight text-foreground">
                 📊 Upgrade Your Trading Experience with TradingView Premium
@@ -178,7 +178,7 @@ export default function TradingViewSection() {
                     alt="TradingView Premium Banner"
                     width={800}
                     height={400}
-                    className="w-full h-auto object-cover rounded-lg shadow-lg md:hidden"
+                    className="w-full h-auto object-cover rounded-lg shadow-lg lg:hidden"
                     data-ai-hint="trading analysis"
                 />
               <p className="text-lg text-muted-foreground">
@@ -217,7 +217,7 @@ export default function TradingViewSection() {
                 <p className='mt-4'>🚀 Trade smarter, not harder.</p>
               </div>
             </div>
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
                 <Image
                     src="./images/trading-view/tradingview-desktop-reaches-stable-preview.jpg"
                     alt="TradingView Premium Banner"
