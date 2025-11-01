@@ -23,6 +23,7 @@ export default function AtasSection() {
                         imageHint={template.imageHint}
                         imageWidth={800}
                         imageHeight={428}
+                        downloadUrl={template.downloadUrl}
                     />
                 ))}
             </div>

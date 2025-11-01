@@ -95,6 +95,23 @@ export const socialLinks = [
     { icon: TikTokIcon, href: 'https://www.tiktok.com/@darktrader__sl', handle: '@darktrader__sl' },
 ];
 
+const freeTemplateMapping: { [key: string]: string } = {
+  "Red Delta DOM Template": "/downloads/Sierra_Red(Delta)DOM.Cht",
+  "Footprint DP Template": "/downloads/ATAS_FootprintDP.cts",
+  "Footprint DA Template": "/downloads/ATAS_FootprintDA.cts",
+  "Footprint + V. Template": "/downloads/ATAS_FootprintV.cts",
+  "AppcapFX-Trade-Manager Template": "/downloads/MT5_AppcapFXTradeManager.ex5",
+  "Better Volume 1.5 Template": "/downloads/MT5_BetterVolume15.ex5",
+  "FundedNext SessionBar Template": "/downloads/MT5_FundedNextSessionBar.ex5",
+  "FundedNext Trade Manager Template": "/downloads/MT5_FundedNextTradeManager.ex5",
+  "Volume profile Template": "/downloads/MT5_VolumeProfile.ex5",
+  "MaxMin DELTA Template": "/downloads/MT5_MaxMinDELTA.ex5",
+  "Strategy Checklist Template": "/downloads/MT5_StrategyChecklist.ex5",
+  "VWAP Template": "/downloads/MT5_VWAP.ex5",
+  "Average volume Pro Template": "/downloads/MT5_AverageVolumePro.ex5",
+  "Vwap DWM Template": "/downloads/MT5_VwapDWM.ex5"
+};
+
 export const sierraChartTemplates = [
   { fileName: "101-chart-cdv-999.jpg", description: "Chart - CDV Template, Price LKR 999" },
   { fileName: "102-red-delta-dom-free.jpg", description: "Red Delta DOM Template, Price LKR free" },
@@ -123,13 +140,15 @@ export const sierraChartTemplates = [
   const name = parts[0];
   const price = parts[1];
   const isFree = price.toLowerCase().includes('free');
+  const downloadUrl = isFree ? freeTemplateMapping[name] : undefined;
   return {
     ...template,
     name,
     price: isFree ? 'Download for free' : price,
     isFree,
     imageUrl: `./images/sierra-charts/${template.fileName}`,
-    imageHint: 'chart template'
+    imageHint: 'chart template',
+    downloadUrl,
   };
 }).sort((a, b) => {
   const numA = parseInt(a.fileName.substring(0, 3), 10);
@@ -158,13 +177,15 @@ export const mt5Templates = [
     const name = parts[0];
     const price = parts[1];
     const isFree = price.toLowerCase().includes('free');
+    const downloadUrl = isFree ? freeTemplateMapping[name] : undefined;
     return {
         ...template,
         name,
         price: isFree ? 'Download for free' : price,
         isFree,
         imageUrl: `./images/mt5-templates/${template.fileName}`,
-        imageHint: 'mt5 template'
+        imageHint: 'mt5 template',
+        downloadUrl
     };
 }).sort((a, b) => {
     const numA = parseInt(a.fileName.substring(0, 3), 10);
@@ -181,13 +202,15 @@ export const atasTemplates = [
     const name = parts[0];
     const price = parts[1];
     const isFree = price.toLowerCase().includes('free');
+    const downloadUrl = isFree ? freeTemplateMapping[name] : undefined;
     return {
         ...template,
         name,
         price: isFree ? 'Download for free' : price,
         isFree,
         imageUrl: `./images/atas-templates/${template.fileName}`,
-        imageHint: 'atas template'
+        imageHint: 'atas template',
+        downloadUrl
     };
 }).sort((a, b) => {
     const numA = parseInt(a.fileName.substring(0, 3), 10);

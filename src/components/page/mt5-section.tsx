@@ -24,6 +24,7 @@ export default function Mt5Section() {
                             imageHint={template.imageHint}
                             imageWidth={800}
                             imageHeight={406}
+                            downloadUrl={template.downloadUrl}
                         />
                     ))}
                 </div>

@@ -12,6 +12,7 @@ type TemplateCardProps = {
   imageHint: string;
   imageWidth: number;
   imageHeight: number;
+  downloadUrl?: string;
 };
 
 export default function TemplateCard({
@@ -22,6 +23,7 @@ export default function TemplateCard({
   imageHint,
   imageWidth,
   imageHeight,
+  downloadUrl
 }: TemplateCardProps) {
   return (
     <Card className="overflow-hidden flex flex-col">
@@ -42,7 +44,7 @@ export default function TemplateCard({
           </CardDescription>
           <div className="mt-4">
             {isFree ? (
-              <Link href="#" className={cn(badgeVariants({ variant: 'default' }), 'text-sm')}>
+              <Link href={downloadUrl || '#'} download className={cn(badgeVariants({ variant: 'default' }), 'text-sm')}>
                 {price}
               </Link>
             ) : (

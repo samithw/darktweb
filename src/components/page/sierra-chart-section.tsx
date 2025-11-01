@@ -24,6 +24,7 @@ export default function SierraChartSection() {
                             imageHint={template.imageHint}
                             imageWidth={400}
                             imageHeight={300}
+                            downloadUrl={template.downloadUrl}
                         />
                     ))}
                 </div>
