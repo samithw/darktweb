@@ -1,3 +1,4 @@
+
 import { Award, Target, Eye, Gem, Users, Library, Mail, Phone, MapPin, Send, Video, Wallet, Gift, Youtube, Facebook, UserCheck } from 'lucide-react';
 
 const TikTokIcon = () => (
@@ -38,13 +39,14 @@ export const mentorships = [
       'Volume Spread Analysis (VSA)',
       'VWAP & Fair Value Concepts',
       'Fixed Range Volume Profile',
-      'Initial Balance & Value Area',
+      'Market Profile Initial Balance & Value Area',
       'Volume Nodes & Standard Deviations',
-      'Developing a Market Narrative',
-      'DOMDelta, Absorption & Exhaustion Signals',
-      'Market Profile & Footprint Reading',
-      'Real-Time Market Prediction Techniques',
-      'Deep dive into Sierra Charts',
+      'Real Market Mechanism Explained',
+      'Depth of Market - DOM',
+      'Delta - Absorption & Exhaustion',
+      'Footprint Orderflow Trading',
+      'Reading professional statics bars',
+      'Deep dive in to sierra charts',
     ],
     highlight: false,
   },
