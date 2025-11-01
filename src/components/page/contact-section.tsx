@@ -16,8 +16,8 @@ export default function ContactSection() {
                 </div>
                 <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                     <div className="space-y-8">
-                        <h2 className="text-3xl font-bold text-foreground text-center lg:text-left">Contact Information</h2>
-                        <p className="text-muted-foreground text-center lg:text-left">
+                        <h2 className="text-3xl font-bold text-foreground text-left">Contact Information</h2>
+                        <p className="text-muted-foreground text-left">
                             Reach out to us directly through any of the channels below. We are available during standard business hours to assist you with your inquiries.
                         </p>
                         <div className="space-y-6">
@@ -36,7 +36,10 @@ export default function ContactSection() {
                         </div>
                     </div>
                     <div className="space-y-8">
-                        <h2 className="text-3xl font-bold text-foreground text-center lg:text-left">Follow Us</h2>
+                        <h2 className="text-3xl font-bold text-foreground text-left">Follow Us</h2>
+                        <p className="text-muted-foreground text-left">
+                            Stay connected for daily market insights, trading tips, and community updates. Follow our channels to join the conversation and sharpen your edge.
+                        </p>
                         <div className="space-y-6">
                             {socialLinks.map((social, index) => (
                                 <div key={index} className="flex items-center gap-4">
