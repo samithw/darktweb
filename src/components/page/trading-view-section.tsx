@@ -199,10 +199,10 @@ export default function TradingViewSection() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-primary mb-4">💎 Perfect for:</h3>
-                 <ul className="space-y-3 list-disc list-inside text-muted-foreground">
-                    <li>Forex and Orderflow traders</li>
-                    <li>Volume and CVD analysis</li>
-                    <li>Institutional-style charting setups</li>
+                 <ul className="space-y-3">
+                    <li className="flex items-start"><Check className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" /> <span className="text-muted-foreground">Forex and Orderflow traders</span></li>
+                    <li className="flex items-start"><Check className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" /> <span className="text-muted-foreground">Volume and CVD analysis</span></li>
+                    <li className="flex items-start"><Check className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" /> <span className="text-muted-foreground">Institutional-style charting setups</span></li>
                 </ul>
               </div>
               <div className="space-y-4 pt-4">
