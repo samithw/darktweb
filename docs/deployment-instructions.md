@@ -26,7 +26,7 @@ git push prod main:main --force --verbose
 # Deploys compiled files to the live GitHub Pages branch.
 git push prod <BUILD_DIR>:gh-pages --force
 
-# command to add a alias
+# command to add a alias test
 git remote add prod
 
 # --- END OF COMMANDS ---
