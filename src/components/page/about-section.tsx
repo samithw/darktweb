@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { aboutValues } from '@/lib/data';
@@ -23,7 +24,7 @@ export default function AboutSection() {
                             alt={aboutImage.description}
                             width={600}
                             height={800}
-                            className="rounded-lg shadow-2xl object-cover aspect-[3/4] mx-auto lg:mx-0"
+                            className="rounded-lg shadow-2xl object-cover aspect-square mx-auto lg:mx-0"
                             data-ai-hint={aboutImage.imageHint}
                         />
                     )}
