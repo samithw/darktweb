@@ -123,6 +123,7 @@ export const socialLinks = [
 
 const freeTemplateMapping: { [key: string]: string } = {
   "Red Delta DOM Template": "/downloads/Sierra_Red(Delta)DOM.Cht",
+  "Dark Trader Footprint Template": "/downloads/Sierra_FreeDarkTraderFootprint.Cht",
   "Footprint DP Template": "/downloads/ATAS_FootprintDP.cts",
   "Footprint DA Template": "/downloads/ATAS_FootprintDA.cts",
   "Footprint + V. Template": "/downloads/ATAS_FootprintV.cts",
@@ -160,7 +161,13 @@ export const sierraChartTemplates = [
   { fileName: "119-powerfull-tpo-02-1999.jpg", description: "Powerful TPO 02 Template, Price LKR 1,999" },
   { fileName: "120-powerfull-tpo-01-2499.jpg", description: "Powerful TPO 01 Template, Price LKR 2,499" },
   { fileName: "121-low-vol-node-1499.jpg", description: "Low Vol Node Template, Price LKR 1,499" },
-  { fileName: "122-blue-red-footprint-1499.jpg", description: "Blue Red Footprint Template, Price LKR 1,499" }
+  { fileName: "122-blue-red-footprint-1499.jpg", description: "Blue Red Footprint Template, Price LKR 1,499" },
+  { fileName: "123-dark-trader-footprint-free.jpg", description: "Dark Trader Footprint Template, Price LKR free" },
+  { fileName: "hacker-delta-bars-1499.jpg", description: "Hacker Delta Bars Template, Price LKR 1,499" },
+  { fileName: "hacker-delta-heatmap-1499.jpg", description: "Hacker Delta Heatmap Template, Price LKR 1,499" },
+  { fileName: "mpvp-arbitrage-strategy-1999.jpg", description: "MP+VP = Arbitrage Strategy Template, Price LKR 1,999" },
+  { fileName: "tpo-frvp-1999.jpg", description: "TPO+FRVP Template, Price LKR 1,999" },
+  { fileName: "zoom-to-footprint-999.jpg", description: "Zoom to Footprint Template, Price LKR 999" }
 ].map(template => {
   const parts = template.description.split(', Price ');
   const name = parts[0];
@@ -179,6 +186,9 @@ export const sierraChartTemplates = [
 }).sort((a, b) => {
   const numA = parseInt(a.fileName.substring(0, 3), 10);
   const numB = parseInt(b.fileName.substring(0, 3), 10);
+  if (isNaN(numA) && isNaN(numB)) return a.fileName.localeCompare(b.fileName);
+  if (isNaN(numA)) return 1;
+  if (isNaN(numB)) return -1;
   return numA - numB;
 });
 
