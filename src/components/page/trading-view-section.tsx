@@ -18,8 +18,17 @@ import { Check } from 'lucide-react';
 
 const indicatorImages = [
   {
+    src: 'https://www.youtube.com/embed/5hMeRMvLgbE',
+    alt: 'Real CDV Indicator Intro Video',
+    type: 'video',
+    width: 800,
+    height: 450,
+    hint: 'trading indicator video'
+  },
+  {
     src: './images/trading-view/cdv-preview1_800x433.jpg',
     alt: 'Real CDV Indicator Preview 1',
+    type: 'image',
     width: 800,
     height: 433,
     hint: 'trading indicator chart'
@@ -27,6 +36,7 @@ const indicatorImages = [
   {
     src: './images/trading-view/cdv-preview2_800x431.jpg',
     alt: 'Real CDV Indicator Preview 2',
+    type: 'image',
     width: 800,
     height: 431,
     hint: 'volume analysis graph'
@@ -34,6 +44,7 @@ const indicatorImages = [
   {
     src: './images/trading-view/cdv-preview3_800x432.jpg',
     alt: 'Real CDV Indicator Preview 3',
+    type: 'image',
     width: 800,
     height: 432,
     hint: 'market data visualization'
@@ -126,18 +137,30 @@ export default function TradingViewSection() {
                       onMouseLeave={plugin.current.reset}
                   >
                       <CarouselContent>
-                      {indicatorImages.map((image, index) => (
+                      {indicatorImages.map((item, index) => (
                           <CarouselItem key={index}>
                           <Card className="overflow-hidden border-0 rounded-b-none">
                               <CardContent className="p-0">
-                                  <Image
-                                      src={image.src}
-                                      alt={image.alt}
-                                      width={image.width}
-                                      height={image.height}
-                                      className="w-full h-auto object-cover"
-                                      data-ai-hint={image.hint}
-                                  />
+                                {item.type === 'video' ? (
+                                    <div className="aspect-w-16 aspect-h-9">
+                                      <iframe
+                                        className="w-full h-full"
+                                        src={item.src}
+                                        title={item.alt}
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                      ></iframe>
+                                    </div>
+                                  ) : (
+                                    <Image
+                                        src={item.src}
+                                        alt={item.alt}
+                                        width={item.width}
+                                        height={item.height}
+                                        className="w-full h-auto object-cover"
+                                        data-ai-hint={item.hint}
+                                    />
+                                  )}
                               </CardContent>
                           </Card>
                           </CarouselItem>
@@ -171,18 +194,21 @@ export default function TradingViewSection() {
       
       <div className="mt-24 bg-card p-8 rounded-xl shadow-2xl border border-primary/20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6">
+            <div className="space-y-6 md:order-last lg:order-first">
               <h2 className="text-3xl font-bold tracking-tight text-foreground">
                 📊 Upgrade Your Trading Experience with TradingView Premium
               </h2>
-              <Image
-                    src="./images/trading-view/tradingview-desktop-reaches-stable-preview.jpg"
-                    alt="TradingView Premium Banner"
-                    width={800}
-                    height={400}
-                    className="w-full h-auto object-cover rounded-lg shadow-lg lg:hidden"
-                    data-ai-hint="trading analysis"
-                />
+              <div className="lg:hidden">
+                  <div className="aspect-w-16 aspect-h-9 w-full overflow-hidden rounded-lg shadow-lg">
+                      <Image
+                          src="/images/trading-view/tradingview-desktop-reaches-stable-preview.jpg"
+                          alt="TradingView Premium Banner"
+                          fill
+                          className="object-cover"
+                          data-ai-hint="trading analysis"
+                      />
+                  </div>
+              </div>
               <p className="text-lg text-muted-foreground">
                 Stop limiting your analysis with the free plan! With TradingView Premium, you get faster data, more charts, and powerful features that professional traders rely on every day.
               </p>
@@ -220,7 +246,7 @@ export default function TradingViewSection() {
             </div>
             <div className="hidden lg:block">
                 <Image
-                    src="./images/trading-view/tradingview-desktop-reaches-stable-preview.jpg"
+                    src="/images/trading-view/tradingview-desktop-reaches-stable-preview.jpg"
                     alt="TradingView Premium Banner"
                     width={800}
                     height={400}
