@@ -152,14 +152,16 @@ export default function TradingViewSection() {
                                       ></iframe>
                                     </div>
                                   ) : (
-                                    <Image
-                                        src={item.src}
-                                        alt={item.alt}
-                                        width={item.width}
-                                        height={item.height}
-                                        className="w-full h-auto object-cover"
-                                        data-ai-hint={item.hint}
-                                    />
+                                    <div className="aspect-w-16 aspect-h-9">
+                                      <Image
+                                          src={item.src}
+                                          alt={item.alt}
+                                          width={item.width}
+                                          height={item.height}
+                                          className="w-full h-full object-cover"
+                                          data-ai-hint={item.hint}
+                                      />
+                                    </div>
                                   )}
                               </CardContent>
                           </Card>
