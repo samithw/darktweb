@@ -1,5 +1,5 @@
 
-import { Award, Target, Eye, Gem, Users, Library, Send, Video, Wallet, Gift, UserCheck } from 'lucide-react';
+import { Award, Target, Eye, Gem, Users, Library, Send, Video, Wallet, Gift, UserCheck, School, Footprints, MessageSquare } from 'lucide-react';
 
 const TikTokIcon = () => (
     <svg fill="currentColor" width="24" height="24" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +58,7 @@ export const mentorships = [
     title: 'Live Mentorship Program',
     description:
       'For serious traders who want to master the real mechanics of the market in a group setting.',
-    price: '21,000 LKR',
+    price: '21000 LKR',
     features: [
       'Auction Market Theory & Market Structure',
       'Key Levels & Liquidity Zones',
@@ -97,7 +97,7 @@ export const mentorships = [
     icon: Library,
     title: 'Self-Study Orderflow Mentorship',
     description: 'Learn at your own pace with lifetime access to our content.',
-    price: '20,000 LKR',
+    price: '20000 LKR',
     features: [
       'Full access to private Google Drive content',
       'Over 100 short, structured video lessons',
@@ -105,6 +105,80 @@ export const mentorships = [
       'Watch anytime, from any device',
       'Ongoing support for your questions',
       'Perfect for independent learners',
+    ],
+    highlight: false,
+  },
+  {
+    icon: School,
+    title: 'Forex Beginner Course',
+    description:
+      'For absolute beginners who want to understand Forex from zero, trade with confidence, and avoid costly beginner mistakes.',
+    price: '7500 LKR',
+    features: [
+      'What is Forex & How the Market Works',
+      'Currency Pairs (Major, Minor & Exotic)',
+      'Bid, Ask, Spread & Pips Explained',
+      'How Forex Brokers Work',
+      'Buy & Sell Logic',
+      'Candlestick Basics & Price Movement',
+      'Support & Resistance (Beginner Level)',
+      'Trend, Range & Market Phases',
+      'Stop Loss & Take Profit Basics',
+      'basic trading view',
+      'create brocker account',
+      'create MT5 Account',
+      'Demo Trading – How to Practice Properly',
+      'Simple Trading Plan for Beginners'
+    ],
+    highlight: false,
+  },
+  {
+    icon: Footprints,
+    title: 'Footprint Course',
+    description:
+      'For serious traders who want to understand aggressive vs passive participants and the true story behind price movement.',
+    price: '9999 LKR',
+    features: [
+        'Introduction',
+        'Bid & Ask',
+        'Imbalance',
+        'Market Participants',
+        'Aggressive Orders',
+        'Passive Orders',
+        'Large Limit Orders',
+        'Market Orders',
+        'Finished Auction',
+        'Unfinished Auction',
+        'Failed Auction',
+        'Successful Auction',
+        'Delta (Maximum & Minimum)',
+        'Delta Divergence',
+        'Absorption',
+        'Reading Statistical Bars',
+        'Sierra Chart Basics',
+        'Free Sierra Chart Templates'
+    ],
+    highlight: false,
+  },
+  {
+    icon: MessageSquare,
+    title: 'Orderflow Discord Community',
+    description: 'For traders who want to learn, share, and grow together inside Sri Lanka’s most active orderflow trading community.',
+    price: 'Free to join',
+    features: [
+      'Learn orderflow trading from real traders',
+      'Daily market talks & trade ideas',
+      'Live chart analysis',
+      'Ask questions and get clear answers',
+      'Improve trading discipline and mindset',
+      'Understand how the real market moves',
+      'Share ideas and charts with other traders',
+      'Stay motivated with a like-minded community',
+      'Access learning materials & examples',
+      'Beginner-friendly and advanced-friendly',
+      'Learn from others’ mistakes',
+      'Support during important market sessions',
+      'Sri Lanka’s most active orderflow community'
     ],
     highlight: false,
   },
@@ -286,3 +360,5 @@ export const commonBenefits = [
     ]
   }
 ];
+
+    
