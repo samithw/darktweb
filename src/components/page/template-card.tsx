@@ -50,7 +50,7 @@ export default function TemplateCard({
             {isFree ? (
                 <p className="text-sm font-semibold text-green-400 mt-2">Free</p>
             ) : (
-                <p className="text-sm text-muted-foreground mt-2">{price}</p>
+                <p className="text-sm font-semibold text-foreground mt-2">{price}</p>
             )}
           </div>
           <div className="mt-4">
