@@ -140,7 +140,7 @@ export default function TradingViewSection() {
                       {indicatorImages.map((item, index) => (
                           <CarouselItem key={index}>
                             <div className="overflow-hidden rounded-lg">
-                              <div className="aspect-w-16 aspect-h-9 bg-black">
+                              <div className="aspect-video bg-black">
                                 {item.type === 'video' ? (
                                     <iframe
                                       className="w-full h-full"
@@ -167,7 +167,7 @@ export default function TradingViewSection() {
                   </Carousel>
                   <div className="relative p-4 rounded-b-lg -mt-1 bg-gradient-to-t from-black to-black/80">
                       <p className="text-left text-primary font-semibold text-lg py-1 px-5">
-                          A next-level volume indicator using true bid/ask data to reveal real market pressure.
+                        A next-level volume indicator using true bid/ask data to reveal real market pressure.
                       </p>
                   </div>
               </div>
@@ -197,7 +197,7 @@ export default function TradingViewSection() {
                 📊 Upgrade Your Trading Experience with TradingView Premium
               </h2>
               <div className="lg:hidden">
-                <div className="aspect-w-16 aspect-h-9 relative w-full overflow-hidden rounded-lg shadow-lg">
+                <div className="aspect-video relative w-full overflow-hidden rounded-lg shadow-lg">
                       <Image
                           src="/images/trading-view/tradingview-desktop-reaches-stable-preview.jpg"
                           alt="TradingView Premium Banner"
