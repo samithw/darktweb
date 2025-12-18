@@ -73,7 +73,7 @@ export default function TemplateCard({
           </div>
           <div className="mt-4">
             {isFree ? (
-              <Link href={downloadUrl || '#'} download className={cn(badgeVariants({ variant: 'default' }), 'text-sm w-full justify-center')}>
+              <Link href={downloadUrl || '#'} download className={cn(badgeVariants({ variant: 'default' }), 'text-sm')}>
                 Download
               </Link>
             ) : (
