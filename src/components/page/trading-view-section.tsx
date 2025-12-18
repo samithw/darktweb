@@ -26,7 +26,7 @@ const indicatorImages = [
     hint: 'trading indicator video'
   },
   {
-    src: './images/trading-view/cdv-preview1_800x433.jpg',
+    src: '/images/trading-view/cdv-preview1_800x433.jpg',
     alt: 'Real CDV Indicator Preview 1',
     type: 'image',
     width: 800,
@@ -34,7 +34,7 @@ const indicatorImages = [
     hint: 'trading indicator chart'
   },
   {
-    src: './images/trading-view/cdv-preview2_800x431.jpg',
+    src: '/images/trading-view/cdv-preview2_800x431.jpg',
     alt: 'Real CDV Indicator Preview 2',
     type: 'image',
     width: 800,
@@ -42,7 +42,7 @@ const indicatorImages = [
     hint: 'volume analysis graph'
   },
   {
-    src: './images/trading-view/cdv-preview3_800x432.jpg',
+    src: '/images/trading-view/cdv-preview3_800x432.jpg',
     alt: 'Real CDV Indicator Preview 3',
     type: 'image',
     width: 800,
@@ -58,6 +58,16 @@ export default function TradingViewSection() {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
+  const carouselRef = React.useRef<HTMLDivElement>(null);
+
+  const stopVideo = React.useCallback(() => {
+    const iframe = carouselRef.current?.querySelector('iframe');
+    if (iframe) {
+      const videoSrc = iframe.src;
+      // This is a common trick to stop an embedded video by resetting its source
+      iframe.src = videoSrc;
+    }
+  }, []);
 
   const scrollTo = (index: number) => {
     if (api) {
@@ -75,6 +85,10 @@ export default function TradingViewSection() {
         return;
       }
       setCurrent(api.selectedScrollSnap());
+      // If the selected slide is not the video (index 0), stop the video
+      if (api.selectedScrollSnap() !== 0) {
+        stopVideo();
+      }
     };
 
     setCount(api.scrollSnapList().length);
@@ -84,7 +98,31 @@ export default function TradingViewSection() {
     return () => {
       api.off('select', onSelect);
     };
-  }, [api]);
+  }, [api, stopVideo]);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // If the video is not intersecting the viewport, stop it
+        if (!entry.isIntersecting) {
+          stopVideo();
+        }
+      },
+      { threshold: 0.5 } // Trigger when 50% of the element is out of view
+    );
+
+    const currentRef = carouselRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [stopVideo]);
+
 
   return (
     <section id="trading-view" className="container mx-auto px-4 py-16 sm:py-24">
@@ -127,7 +165,7 @@ export default function TradingViewSection() {
                </Button>
           </div>
 
-          <div>
+          <div ref={carouselRef}>
               <div className="relative">
                   <Carousel
                       setApi={setApi}
