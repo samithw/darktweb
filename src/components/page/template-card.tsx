@@ -17,8 +17,8 @@ type TemplateCardProps = {
 
 const WhatsAppIcon = () => (
     <svg
-        width="16"
-        height="16"
+        width="18"
+        height="18"
         viewBox="0 0 24 24"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
