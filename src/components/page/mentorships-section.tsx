@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -19,7 +20,7 @@ export default function MentorshipsSection() {
                 {mentorships.map((mentorship) => (
                     <Card
                         key={mentorship.title}
-                        className={`flex flex-col ${mentorship.highlight ? 'border-primary ring-2 ring-primary shadow-lg' : ''
+                        className={`flex flex-col transition-colors ${mentorship.highlight ? 'border-primary ring-2 ring-primary shadow-lg' : 'hover:border-primary'
                             }`}
                     >
                         <CardHeader className="flex-grow">
@@ -48,7 +49,7 @@ export default function MentorshipsSection() {
                                     {mentorship.highlight ? "For dedicated individuals" : "Great value"}
                                 </p>
                             </div>
-                            <Button asChild className="w-full" size="lg" variant={mentorship.highlight ? 'default' : 'secondary'}>
+                            <Button asChild className={`w-full ${!mentorship.highlight && 'hover:bg-primary hover:text-primary-foreground'}`} size="lg" variant={mentorship.highlight ? 'default' : 'secondary'}>
                                 <Link href="#contact">Enroll Now</Link>
                             </Button>
                         </CardFooter>
