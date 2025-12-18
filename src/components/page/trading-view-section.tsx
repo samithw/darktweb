@@ -53,6 +53,7 @@ const indicatorImages = [
 
 const YOUTUBE_VIDEO_ID = 'youtube-video-player';
 const isCdvOfferActive = false; // Set to true to re-enable the special offer
+const isPremiumOfferActive = true; // Set to false to end the special offer
 
 export default function TradingViewSection() {
   const plugin = React.useRef(
@@ -299,11 +300,19 @@ export default function TradingViewSection() {
                 </ul>
               </div>
               <div className="space-y-4 pt-4">
-                  <div className="flex items-baseline gap-4">
-                    <span className="text-4xl font-bold text-foreground">4500 LKR</span>
-                    <span className="text-xl font-medium text-muted-foreground line-through">4950 LKR</span>
-                  </div>
-                  <p className="text-sm text-green-400 font-semibold">Special Offer!</p>
+                  {isPremiumOfferActive ? (
+                    <>
+                      <div className="flex items-baseline gap-4">
+                        <span className="text-4xl font-bold text-foreground">4500 LKR</span>
+                        <span className="text-xl font-medium text-muted-foreground line-through">4950 LKR</span>
+                      </div>
+                      <p className="text-sm text-green-400 font-semibold">Special Offer!</p>
+                    </>
+                  ) : (
+                    <div className="flex items-baseline gap-4">
+                      <span className="text-4xl font-bold text-foreground">4950 LKR</span>
+                    </div>
+                  )}
               </div>
               <div className="flex items-center gap-4">
                 <Button asChild size="lg" className="mt-4">
