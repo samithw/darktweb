@@ -52,6 +52,7 @@ const indicatorImages = [
 ];
 
 const YOUTUBE_VIDEO_ID = 'youtube-video-player';
+const isCdvOfferActive = false; // Set to true to re-enable the special offer
 
 export default function TradingViewSection() {
   const plugin = React.useRef(
@@ -86,7 +87,7 @@ export default function TradingViewSection() {
     if (!(window as any).YT) {
       const tag = document.createElement('script');
       tag.src = "https://www.youtube.com/iframe_api";
-      window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+      (window as any).onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
       const firstScriptTag = document.getElementsByTagName('script')[0];
       if (firstScriptTag && firstScriptTag.parentNode) {
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -175,11 +176,19 @@ export default function TradingViewSection() {
                   </p>
               </div>
                <div className="space-y-4 pt-4">
-                  <div className="flex items-baseline gap-4">
-                    <span className="text-4xl font-bold text-foreground">3999 LKR</span>
-                    <span className="text-xl font-medium text-muted-foreground line-through">4999 LKR</span>
-                  </div>
-                  <p className="text-sm text-green-400 font-semibold">Special Offer!</p>
+                  {isCdvOfferActive ? (
+                    <>
+                      <div className="flex items-baseline gap-4">
+                        <span className="text-4xl font-bold text-foreground">3999 LKR</span>
+                        <span className="text-xl font-medium text-muted-foreground line-through">4999 LKR</span>
+                      </div>
+                      <p className="text-sm text-green-400 font-semibold">Special Offer!</p>
+                    </>
+                  ) : (
+                    <div className="flex items-baseline gap-4">
+                      <span className="text-4xl font-bold text-foreground">4999 LKR</span>
+                    </div>
+                  )}
               </div>
                <Button asChild size="lg" className="mt-6">
                   <Link href="#contact">Get The Indicator</Link>
