@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription } from '@/components/ui/card';
-import { Badge, badgeVariants } from '@/components/ui/badge';
+import { badgeVariants } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -58,11 +58,9 @@ export default function TemplateCard({
                 {price}
               </Link>
             ) : (
-                <Button asChild size="sm" className="w-full">
-                    <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                        Buy Now
-                    </Link>
-                </Button>
+                <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={cn(badgeVariants({ variant: 'default' }), 'text-sm w-full justify-center')}>
+                    Order on Whatsapp
+                </Link>
             )}
           </div>
         </div>
