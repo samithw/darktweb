@@ -139,32 +139,28 @@ export default function TradingViewSection() {
                       <CarouselContent>
                       {indicatorImages.map((item, index) => (
                           <CarouselItem key={index}>
-                          <Card className="overflow-hidden border-0 rounded-b-none">
-                              <CardContent className="p-0">
+                            <div className="overflow-hidden rounded-lg">
+                              <div className="aspect-w-16 aspect-h-9 bg-black">
                                 {item.type === 'video' ? (
-                                    <div className="aspect-w-16 aspect-h-9">
-                                      <iframe
-                                        className="w-full h-full"
-                                        src={item.src}
-                                        title={item.alt}
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowFullScreen
-                                      ></iframe>
-                                    </div>
+                                    <iframe
+                                      className="w-full h-full"
+                                      src={item.src}
+                                      title={item.alt}
+                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                      allowFullScreen
+                                    ></iframe>
                                   ) : (
-                                    <div className="aspect-w-16 aspect-h-9">
-                                      <Image
-                                          src={item.src}
-                                          alt={item.alt}
-                                          width={item.width}
-                                          height={item.height}
-                                          className="w-full h-full object-cover"
-                                          data-ai-hint={item.hint}
-                                      />
-                                    </div>
+                                    <Image
+                                        src={item.src}
+                                        alt={item.alt}
+                                        width={item.width}
+                                        height={item.height}
+                                        className="w-full h-full object-cover"
+                                        data-ai-hint={item.hint}
+                                    />
                                   )}
-                              </CardContent>
-                          </Card>
+                              </div>
+                            </div>
                           </CarouselItem>
                       ))}
                       </CarouselContent>
@@ -201,7 +197,7 @@ export default function TradingViewSection() {
                 📊 Upgrade Your Trading Experience with TradingView Premium
               </h2>
               <div className="lg:hidden">
-                  <div className="aspect-w-16 aspect-h-9 w-full overflow-hidden rounded-lg shadow-lg">
+                <div className="aspect-w-16 aspect-h-9 relative w-full overflow-hidden rounded-lg shadow-lg">
                       <Image
                           src="/images/trading-view/tradingview-desktop-reaches-stable-preview.jpg"
                           alt="TradingView Premium Banner"
