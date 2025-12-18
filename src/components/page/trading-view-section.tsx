@@ -322,7 +322,7 @@ export default function TradingViewSection() {
             </div>
             <div className="hidden lg:block">
                 <Image
-                    src="/images/trading-view/tradingview-desktop-reaches-stable-preview.jpg"
+                    src="./images/trading-view/tradingview-desktop-reaches-stable-preview.jpg"
                     alt="TradingView Premium Banner"
                     width={800}
                     height={400}
