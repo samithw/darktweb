@@ -25,30 +25,6 @@ const indicatorImages = [
     height: 450,
     hint: 'trading indicator video'
   },
-  {
-    src: './images/trading-view/cdv-preview1_800x433.jpg',
-    alt: 'Real CDV Indicator Preview 1',
-    type: 'image',
-    width: 800,
-    height: 433,
-    hint: 'trading indicator chart'
-  },
-  {
-    src: './images/trading-view/cdv-preview2_800x431.jpg',
-    alt: 'Real CDV Indicator Preview 2',
-    type: 'image',
-    width: 800,
-    height: 431,
-    hint: 'volume analysis graph'
-  },
-  {
-    src: './images/trading-view/cdv-preview3_800x432.jpg',
-    alt: 'Real CDV Indicator Preview 3',
-    type: 'image',
-    width: 800,
-    height: 432,
-    hint: 'market data visualization'
-  },
 ];
 
 const YOUTUBE_VIDEO_ID = 'youtube-video-player';
@@ -335,3 +311,5 @@ export default function TradingViewSection() {
     </section>
   );
 }
+
+    
