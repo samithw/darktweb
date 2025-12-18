@@ -168,7 +168,7 @@ export default function TradingViewSection() {
                   )}
               </div>
                <Button asChild size="lg" className="mt-6">
-                  <Link href="#contact">Get The Indicator</Link>
+                  <Link href="https://wa.me/94760311037?text=Hello%20Dark%20Trader,%20I%20am%20interested%20in%20purchasing%20the%20Real%20Cumulative%20Delta%20Volume%20(CDV)%20Indicator%20for%20TradingView.%20Could%20you%20please%20provide%20more%20information%3F" target="_blank" rel="noopener noreferrer">Get The Indicator</Link>
                </Button>
           </div>
 
@@ -218,20 +218,22 @@ export default function TradingViewSection() {
                   </div>
               </div>
              
-              <div className="flex justify-center gap-2 mt-4">
-                  {Array.from({ length: count }).map((_, index) => (
-                      <button
-                          key={index}
-                          onClick={() => scrollTo(index)}
-                          className={cn(
-                              "h-2.5 w-8 rounded-full transition-colors",
-                              current === index ? "bg-primary" : "bg-muted hover:bg-muted-foreground/50"
-                          )}
-                      >
-                        <span className="sr-only">Go to slide {index + 1}</span>
-                      </button>
-                  ))}
-              </div>
+              {count > 1 && (
+                <div className="flex justify-center gap-2 mt-4">
+                    {Array.from({ length: count }).map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => scrollTo(index)}
+                            className={cn(
+                                "h-2.5 w-8 rounded-full transition-colors",
+                                current === index ? "bg-primary" : "bg-muted hover:bg-muted-foreground/50"
+                            )}
+                        >
+                          <span className="sr-only">Go to slide {index + 1}</span>
+                        </button>
+                    ))}
+                </div>
+              )}
           </div>
         </div>
       </div>
@@ -311,5 +313,7 @@ export default function TradingViewSection() {
     </section>
   );
 }
+
+    
 
     
