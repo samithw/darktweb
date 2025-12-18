@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription } from '@/components/ui/card';
 import { badgeVariants } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 type TemplateCardProps = {
@@ -48,14 +47,16 @@ export default function TemplateCard({
             <CardDescription className="text-base text-card-foreground">
               {name}
             </CardDescription>
-            {!isFree && (
+            {isFree ? (
+                <p className="text-sm font-semibold text-green-400 mt-2">Free</p>
+            ) : (
                 <p className="text-sm text-muted-foreground mt-2">{price}</p>
             )}
           </div>
           <div className="mt-4">
             {isFree ? (
-              <Link href={downloadUrl || '#'} download className={cn(badgeVariants({ variant: 'default' }), 'text-sm')}>
-                {price}
+              <Link href={downloadUrl || '#'} download className={cn(badgeVariants({ variant: 'default' }), 'text-sm w-full justify-center')}>
+                Download
               </Link>
             ) : (
                 <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={cn(badgeVariants({ variant: 'default' }), 'text-sm w-full justify-center')}>
