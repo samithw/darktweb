@@ -68,6 +68,7 @@ export const mentorships = [
     description:
       'For serious traders who want to master the real mechanics of the market in a group setting.',
     price: '21000 LKR',
+    priceDescription: 'Comprehensive group learning',
     features: [
       'Auction Market Theory & Market Structure',
       'Key Levels & Liquidity Zones',
@@ -91,6 +92,7 @@ export const mentorships = [
     description:
       'One-on-one program for traders who want straight focus and faster results.',
     price: '40,000 LKR',
+    priceDescription: 'For dedicated individuals',
     features: [
       '100% personal attention',
       'Customized learning pace',
@@ -107,6 +109,7 @@ export const mentorships = [
     title: 'Self-Study Orderflow Mentorship',
     description: 'Learn at your own pace with lifetime access to our content.',
     price: '20000 LKR',
+    priceDescription: 'Flexible and self-paced',
     features: [
       'Full access to private Google Drive content',
       'Over 100 short, structured video lessons',
@@ -123,6 +126,7 @@ export const mentorships = [
     description:
       'For absolute beginners who want to understand Forex from zero, trade with confidence, and avoid costly beginner mistakes.',
     price: '7500 LKR',
+    priceDescription: 'Your first step into Forex',
     features: [
       'What is Forex & How the Market Works',
       'Currency Pairs (Major, Minor & Exotic)',
@@ -147,21 +151,22 @@ export const mentorships = [
     description:
       'For serious traders who want to understand aggressive vs passive participants and the true story behind price movement.',
     price: '9999 LKR',
+    priceDescription: 'Unlock market internals',
     features: [
-        'Bid & Ask',
-        'Imbalance',
-        'Market Participants',
-        'Aggressive / Passive Orders',
-        'Limit Orders',
-        'Market Orders',
-        'Finished / Unfinished Auction',
-        'Failed / Successful Auction',
-        'Delta (Maximum & Minimum)',
-        'Delta Divergence',
-        'Absorption',
-        'Reading Statistical Bars',
-        'Sierra Chart Basics',
-        'Free Sierra Chart Templates'
+      'Bid & Ask',
+      'Imbalance',
+      'Market Participants',
+      'Aggressive / Passive Orders',
+      'Limit Orders',
+      'Market Orders',
+      'Finished / Unfinished Auction',
+      'Failed / Successful Auction',
+      'Delta (Maximum & Minimum)',
+      'Delta Divergence',
+      'Absorption',
+      'Reading Statistical Bars',
+      'Sierra Chart Basics',
+      'Free Sierra Chart Templates',
     ],
     highlight: false,
   },
@@ -170,6 +175,7 @@ export const mentorships = [
     title: 'Orderflow Discord Community',
     description: 'For traders who want to learn, share, and grow together inside Sri Lanka’s most active orderflow trading community.',
     price: 'Members only',
+    priceDescription: 'Join the community',
     features: [
       'Learn orderflow trading from real traders',
       'Daily market talks & trade ideas',
@@ -369,3 +375,6 @@ export const commonBenefits = [
     
 
 
+
+
+    

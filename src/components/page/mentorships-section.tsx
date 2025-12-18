@@ -46,7 +46,7 @@ export default function MentorshipsSection() {
                             <div className='w-full'>
                                 <p className="text-3xl font-bold">{mentorship.price}</p>
                                 <p className="text-sm text-muted-foreground">
-                                    {mentorship.highlight ? "For dedicated individuals" : "Great value"}
+                                    {mentorship.priceDescription}
                                 </p>
                             </div>
                             <Button asChild className={`w-full ${!mentorship.highlight && 'hover:bg-primary hover:text-primary-foreground'}`} size="lg" variant={mentorship.highlight ? 'default' : 'secondary'}>
@@ -91,3 +91,5 @@ export default function MentorshipsSection() {
         </section>
     );
 }
+
+    
