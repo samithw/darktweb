@@ -168,7 +168,7 @@ export default function TradingViewSection() {
                   )}
               </div>
                <Button asChild size="lg" className="mt-6">
-                  <Link href="https://wa.me/94760311037?text=Hello%20Dark%20Trader,%20I%20am%20interested%20in%20purchasing%20the%20Real%20Cumulative%20Delta%20Volume%20(CDV)%20Indicator%20for%20TradingView.%20Could%20you%20please%20provide%20more%20information%3F" target="_blank" rel="noopener noreferrer">Get The Indicator</Link>
+                  <Link href="https://wa.me/94760311037?text=Hello%2C%20I'm%20interested%20in%3A%0A%2AReal%20Cumulative%20Delta%20Volume%20(CDV)%20Indicator%2A" target="_blank" rel="noopener noreferrer">Get The Indicator</Link>
                </Button>
           </div>
 
