@@ -18,7 +18,7 @@ import { Check } from 'lucide-react';
 
 const indicatorImages = [
   {
-    src: 'https://www.youtube.com/embed/5hMeRMvLgbE',
+    src: 'https://www.youtube.com/embed/5hMeRMvLgbE?enablejsapi=1',
     alt: 'Real CDV Indicator Intro Video',
     type: 'video',
     width: 800,
@@ -51,6 +51,8 @@ const indicatorImages = [
   },
 ];
 
+const YOUTUBE_VIDEO_ID = 'youtube-video-player';
+
 export default function TradingViewSection() {
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
@@ -59,13 +61,14 @@ export default function TradingViewSection() {
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
   const carouselRef = React.useRef<HTMLDivElement>(null);
+  const playerRef = React.useRef<any>(null);
 
-  const stopVideo = React.useCallback(() => {
-    const iframe = carouselRef.current?.querySelector('iframe');
-    if (iframe) {
-      const videoSrc = iframe.src;
-      // This is a common trick to stop an embedded video by resetting its source
-      iframe.src = videoSrc;
+  const pauseVideo = React.useCallback(() => {
+    if (playerRef.current && playerRef.current.getPlayerState) {
+      // 1 is YT.PlayerState.PLAYING
+      if (playerRef.current.getPlayerState() === 1) {
+        playerRef.current.pauseVideo();
+      }
     }
   }, []);
 
@@ -74,6 +77,25 @@ export default function TradingViewSection() {
       api.scrollTo(index);
     }
   }
+  
+  React.useEffect(() => {
+    const onYouTubeIframeAPIReady = () => {
+      playerRef.current = new (window as any).YT.Player(YOUTUBE_VIDEO_ID, {});
+    };
+
+    if (!(window as any).YT) {
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      if (firstScriptTag && firstScriptTag.parentNode) {
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      }
+    } else {
+      onYouTubeIframeAPIReady();
+    }
+  }, []);
+
 
   React.useEffect(() => {
     if (!api) {
@@ -85,9 +107,8 @@ export default function TradingViewSection() {
         return;
       }
       setCurrent(api.selectedScrollSnap());
-      // If the selected slide is not the video (index 0), stop the video
       if (api.selectedScrollSnap() !== 0) {
-        stopVideo();
+        pauseVideo();
       }
     };
 
@@ -98,30 +119,30 @@ export default function TradingViewSection() {
     return () => {
       api.off('select', onSelect);
     };
-  }, [api, stopVideo]);
+  }, [api, pauseVideo]);
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // If the video is not intersecting the viewport, stop it
         if (!entry.isIntersecting) {
-          stopVideo();
+          pauseVideo();
         }
       },
-      { threshold: 0.5 } // Trigger when 50% of the element is out of view
+      { threshold: 0.5 } 
     );
 
     const currentRef = carouselRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
+    const videoIframe = currentRef?.querySelector(`#${YOUTUBE_VIDEO_ID}`);
+    if (videoIframe) {
+      observer.observe(videoIframe);
     }
 
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
+      if (videoIframe) {
+        observer.unobserve(videoIframe);
       }
     };
-  }, [stopVideo]);
+  }, [pauseVideo]);
 
 
   return (
@@ -181,6 +202,7 @@ export default function TradingViewSection() {
                               <div className="aspect-video bg-black">
                                 {item.type === 'video' ? (
                                     <iframe
+                                      id={YOUTUBE_VIDEO_ID}
                                       className="w-full h-full"
                                       src={item.src}
                                       title={item.alt}
