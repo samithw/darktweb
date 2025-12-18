@@ -26,7 +26,7 @@ const indicatorImages = [
     hint: 'trading indicator video'
   },
   {
-    src: '/images/trading-view/cdv-preview1_800x433.jpg',
+    src: './images/trading-view/cdv-preview1_800x433.jpg',
     alt: 'Real CDV Indicator Preview 1',
     type: 'image',
     width: 800,
@@ -34,7 +34,7 @@ const indicatorImages = [
     hint: 'trading indicator chart'
   },
   {
-    src: '/images/trading-view/cdv-preview2_800x431.jpg',
+    src: './images/trading-view/cdv-preview2_800x431.jpg',
     alt: 'Real CDV Indicator Preview 2',
     type: 'image',
     width: 800,
@@ -42,7 +42,7 @@ const indicatorImages = [
     hint: 'volume analysis graph'
   },
   {
-    src: '/images/trading-view/cdv-preview3_800x432.jpg',
+    src: './images/trading-view/cdv-preview3_800x432.jpg',
     alt: 'Real CDV Indicator Preview 3',
     type: 'image',
     width: 800,
@@ -269,7 +269,7 @@ export default function TradingViewSection() {
               <div className="lg:hidden">
                 <div className="aspect-video relative w-full overflow-hidden rounded-lg shadow-lg">
                       <Image
-                          src="/images/trading-view/tradingview-desktop-reaches-stable-preview.jpg"
+                          src="./images/trading-view/tradingview-desktop-reaches-stable-preview.jpg"
                           alt="TradingView Premium Banner"
                           fill
                           className="object-cover"
