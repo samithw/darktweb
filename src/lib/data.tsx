@@ -58,7 +58,7 @@ export const mentorships = [
     title: 'Live Mentorship Program',
     description:
       'For serious traders who want to master the real mechanics of the market in a group setting.',
-    price: '18,000 LKR',
+    price: '21,000 LKR',
     features: [
       'Auction Market Theory & Market Structure',
       'Key Levels & Liquidity Zones',
@@ -97,7 +97,7 @@ export const mentorships = [
     icon: Library,
     title: 'Self-Study Orderflow Mentorship',
     description: 'Learn at your own pace with lifetime access to our content.',
-    price: '15,000 LKR',
+    price: '20,000 LKR',
     features: [
       'Full access to private Google Drive content',
       'Over 100 short, structured video lessons',
