@@ -154,6 +154,22 @@ export default function SierraChartSection() {
 
                 <div className="mt-16 bg-background p-8 rounded-xl shadow-2xl border border-primary/20">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl font-bold tracking-tight text-foreground">
+                                Basic Sierra Chart Guide – Step-by-Step for Beginners
+                            </h2>
+                            <div>
+                                <h3 className="text-xl font-semibold text-primary mb-4">🔥 What You Will Learn in This Video</h3>
+                                <ul className="space-y-3">
+                                    {videoPoints.map((point, index) => (
+                                        <li key={index} className="flex items-start">
+                                            <Check className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
+                                            <span className="text-muted-foreground">{point}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
                         <div ref={carouselRef}>
                             <Carousel
                                 setApi={setApi}
@@ -179,22 +195,6 @@ export default function SierraChartSection() {
                                     </CarouselItem>
                                 </CarouselContent>
                             </Carousel>
-                        </div>
-                        <div className="space-y-6">
-                            <h2 className="text-3xl font-bold tracking-tight text-foreground">
-                                Basic Sierra Chart Guide – Step-by-Step for Beginners
-                            </h2>
-                            <div>
-                                <h3 className="text-xl font-semibold text-primary mb-4">🔥 What You Will Learn in This Video</h3>
-                                <ul className="space-y-3">
-                                    {videoPoints.map((point, index) => (
-                                        <li key={index} className="flex items-start">
-                                            <Check className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" />
-                                            <span className="text-muted-foreground">{point}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
