@@ -41,6 +41,11 @@ export default function MentorshipsSection() {
                                     </li>
                                 ))}
                             </ul>
+                            {mentorship.title === 'Self-Study Orderflow Mentorship' && (
+                                <p className="mt-4 text-sm text-muted-foreground italic">
+                                    You will receive FREE access to the latest live class recordings stored on Google Drive.
+                                </p>
+                            )}
                         </CardContent>
                         <CardFooter className="flex flex-col items-start gap-4 pt-6">
                             <div className='w-full'>
