@@ -32,7 +32,7 @@ export default function MentorshipsSection() {
                                 </div>
                             </div>
                         </CardHeader>
-                        <CardContent className="flex-grow">
+                        <CardContent className="flex-grow flex flex-col justify-between">
                             <ul className="space-y-3">
                                 {mentorship.features.map((feature) => (
                                     <li key={feature} className="flex items-start">
@@ -42,9 +42,11 @@ export default function MentorshipsSection() {
                                 ))}
                             </ul>
                             {mentorship.title === 'Self-Study Orderflow Mentorship' && (
-                                <p className="mt-4 text-sm text-muted-foreground italic">
-                                    You will receive FREE access to the latest live class recordings stored on Google Drive.
-                                </p>
+                                <div className="mt-6 p-4 bg-primary/10 border border-primary/20 rounded-lg text-center">
+                                    <p className="text-sm font-medium text-foreground">
+                                        You will receive FREE access to the latest live class recordings stored on Google Drive.
+                                    </p>
+                                </div>
                             )}
                         </CardContent>
                         <CardFooter className="flex flex-col items-start gap-4 pt-6">
@@ -96,5 +98,3 @@ export default function MentorshipsSection() {
         </section>
     );
 }
-
-    
