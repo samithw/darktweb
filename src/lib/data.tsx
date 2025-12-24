@@ -117,6 +117,7 @@ export const mentorships = [
       'Watch anytime, from any device',
       'Ongoing support for your questions',
       'Perfect for independent learners',
+      'You will receive FREE access to the latest live class recordings stored on Google Drive',
     ],
     highlight: false,
   },
