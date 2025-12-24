@@ -158,14 +158,14 @@ export default function TradingViewSection() {
                   {isCdvOfferActive ? (
                     <>
                       <div className="flex items-baseline gap-4">
-                        <span className="text-4xl font-bold text-foreground">3999 LKR</span>
-                        <span className="text-xl font-medium text-muted-foreground line-through">4999 LKR</span>
+                        <span className="text-4xl font-bold text-foreground">3,999 LKR</span>
+                        <span className="text-xl font-medium text-muted-foreground line-through">4,999 LKR</span>
                       </div>
                       <p className="text-sm text-green-400 font-semibold">Special Offer!</p>
                     </>
                   ) : (
                     <div className="flex items-baseline gap-4">
-                      <span className="text-4xl font-bold text-foreground">4999 LKR</span>
+                      <span className="text-4xl font-bold text-foreground">4,999 LKR</span>
                     </div>
                   )}
               </div>
@@ -283,14 +283,14 @@ export default function TradingViewSection() {
                   {isPremiumOfferActive ? (
                     <>
                       <div className="flex items-baseline gap-4">
-                        <span className="text-4xl font-bold text-foreground">4500 LKR</span>
-                        <span className="text-xl font-medium text-muted-foreground line-through">4950 LKR</span>
+                        <span className="text-4xl font-bold text-foreground">4,500 LKR</span>
+                        <span className="text-xl font-medium text-muted-foreground line-through">4,950 LKR</span>
                       </div>
                       <p className="text-sm text-green-400 font-semibold">Special Offer!</p>
                     </>
                   ) : (
                     <div className="flex items-baseline gap-4">
-                      <span className="text-4xl font-bold text-foreground">4950 LKR</span>
+                      <span className="text-4xl font-bold text-foreground">4,950 LKR</span>
                     </div>
                   )}
               </div>

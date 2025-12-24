@@ -67,7 +67,7 @@ export const mentorships = [
     title: 'Live Mentorship Program',
     description:
       'For serious traders who want to master the real mechanics of the market in a group setting.',
-    price: '21000 LKR',
+    price: '21,000 LKR',
     priceDescription: 'Comprehensive group learning',
     features: [
       'Auction Market Theory & Market Structure',
@@ -108,7 +108,7 @@ export const mentorships = [
     icon: Library,
     title: 'Self-Study Orderflow Mentorship',
     description: 'Learn at your own pace with lifetime access to our content.',
-    price: '20000 LKR',
+    price: '20,000 LKR',
     priceDescription: 'Flexible and self-paced',
     features: [
       'Full access to private Google Drive content',
@@ -119,13 +119,14 @@ export const mentorships = [
       'Perfect for independent learners',
     ],
     highlight: false,
+    isGoogleDriveCourse: true,
   },
   {
     icon: School,
     title: 'Forex Beginner Course',
     description:
       'For absolute beginners who want to understand Forex from zero, trade with confidence, and avoid costly beginner mistakes.',
-    price: '7500 LKR',
+    price: '7,500 LKR',
     priceDescription: 'Your first step into Forex',
     isGoogleDriveCourse: true,
     features: [
@@ -151,7 +152,7 @@ export const mentorships = [
     title: 'Footprint Course',
     description:
       'For serious traders who want to understand aggressive vs passive participants and the true story behind price movement.',
-    price: '9999 LKR',
+    price: '9,999 LKR',
     priceDescription: 'Unlock market internals',
     isGoogleDriveCourse: true,
     features: [
@@ -264,7 +265,7 @@ export const sierraChartTemplates = [
   return {
     ...template,
     name,
-    price: isFree ? 'Download for free' : price,
+    price: isFree ? 'Download for free' : price.replace(/(\d+)/, (_, num) => parseInt(num).toLocaleString('en-US')),
     isFree,
     imageUrl: `./images/sierra-charts/${template.fileName}`,
     imageHint: 'chart template',
@@ -304,7 +305,7 @@ export const mt5Templates = [
     return {
         ...template,
         name,
-        price: isFree ? 'Download for free' : price,
+        price: isFree ? 'Download for free' : price.replace(/(\d+)/, (_, num) => parseInt(num).toLocaleString('en-US')),
         isFree,
         imageUrl: `./images/mt5-templates/${template.fileName}`,
         imageHint: 'mt5 template',
@@ -380,4 +381,5 @@ export const commonBenefits = [
 
 
     
+
 
