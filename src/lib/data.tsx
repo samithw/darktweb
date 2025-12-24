@@ -127,6 +127,7 @@ export const mentorships = [
       'For absolute beginners who want to understand Forex from zero, trade with confidence, and avoid costly beginner mistakes.',
     price: '7500 LKR',
     priceDescription: 'Your first step into Forex',
+    isGoogleDriveCourse: true,
     features: [
       'What is Forex & How the Market Works',
       'Currency Pairs (Major, Minor & Exotic)',
@@ -152,6 +153,7 @@ export const mentorships = [
       'For serious traders who want to understand aggressive vs passive participants and the true story behind price movement.',
     price: '9999 LKR',
     priceDescription: 'Unlock market internals',
+    isGoogleDriveCourse: true,
     features: [
       'Bid & Ask',
       'Imbalance',
@@ -378,3 +380,4 @@ export const commonBenefits = [
 
 
     
+

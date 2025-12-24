@@ -2,8 +2,10 @@
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, Gift } from 'lucide-react';
+import { CheckCircle, Gift, FolderKanban } from 'lucide-react';
 import { mentorships, commonBenefits } from '@/lib/data.tsx';
+import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
 
 export default function MentorshipsSection() {
     return (
@@ -29,6 +31,12 @@ export default function MentorshipsSection() {
                                 <div>
                                     <CardTitle className="text-2xl">{mentorship.title}</CardTitle>
                                     <CardDescription className="mt-1">{mentorship.description}</CardDescription>
+                                    {mentorship.isGoogleDriveCourse && (
+                                        <Badge variant="secondary" className="mt-2">
+                                            <FolderKanban className="h-3 w-3 mr-1.5" />
+                                            Google Drive Content
+                                        </Badge>
+                                    )}
                                 </div>
                             </div>
                         </CardHeader>
