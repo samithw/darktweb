@@ -152,7 +152,7 @@ export default function SierraChartSection() {
                     </p>
                 </div>
 
-                <div className="mt-16 bg-background p-8 rounded-xl shadow-2xl border border-primary/20">
+                <div className="mt-16 p-8 rounded-xl shadow-2xl border border-primary/20">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
                             <h2 className="text-3xl font-bold tracking-tight text-foreground">
