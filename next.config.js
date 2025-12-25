@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export', // This is not needed for server-side rewrites
+  output: 'export', // This is not needed for server-side rewrites
   images: {
     remotePatterns: [
       {
