@@ -1,12 +1,8 @@
-import type { NextConfig } from 'next'
-
-const isProd = process.env.NODE_ENV === 'production'
-
-// 👇 uncomment for darktweb2 or origin - comment for prod
-const repoName = 'darktweb'
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
