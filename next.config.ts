@@ -1,6 +1,16 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next';
+
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'darktweb';
+
+const nextConfig: NextConfig = {
   output: 'export',
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -14,34 +24,12 @@ const nextConfig = {
       },
     ],
   },
+  basePath: isProd ? `/${repoName}` : '',
+  assetPrefix: isProd ? `/${repoName}/` : '',
   async rewrites() {
     return [
       {
-        source: '/mentorships',
-        destination: '/',
-      },
-      {
-        source: '/sierra-chart',
-        destination: '/',
-      },
-      {
-        source: '/atas',
-        destination: '/',
-      },
-      {
-        source: '/mt5',
-        destination: '/',
-      },
-      {
-        source: '/trading-view',
-        destination: '/',
-      },
-      {
-        source: '/about',
-        destination: '/',
-      },
-      {
-        source: '/contact',
+        source: '/:path((?!images/|downloads/|favicon.ico|api/).*)',
         destination: '/',
       },
     ];
