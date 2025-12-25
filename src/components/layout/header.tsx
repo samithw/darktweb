@@ -31,9 +31,6 @@ export default function Header() {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      // In a GH pages setup, the pathname might include the repo name.
-      // We want to preserve that, so we just update the hash.
-      window.history.pushState({}, '', `${window.location.pathname.split('#')[0]}${href}`);
       setIsOpen(false);
     }
   };
