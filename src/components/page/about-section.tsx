@@ -20,11 +20,11 @@ export default function AboutSection() {
                 <div>
                     {aboutImage && (
                         <Image
-                            src={aboutImage.imageUrl.startsWith('.') ? aboutImage.imageUrl.substring(1) : aboutImage.imageUrl}
+                            src={aboutImage.imageUrl}
                             alt={aboutImage.description}
                             width={600}
-                            height={800}
-                            className="rounded-lg shadow-2xl object-cover aspect-square mx-auto lg:mx-0"
+                            height={600}
+                            className="rounded-lg shadow-2xl object-cover mx-auto lg:mx-0"
                             data-ai-hint={aboutImage.imageHint}
                         />
                     )}
