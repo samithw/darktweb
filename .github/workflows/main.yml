@@ -9,6 +9,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # This line gives the bot permission to push code
     steps:
       # Step 1: Check out your code
       - uses: actions/checkout@v4
