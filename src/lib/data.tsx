@@ -267,7 +267,7 @@ export const sierraChartTemplates = [
     name,
     price: isFree ? 'Download for free' : price.replace(/(\d+)/, (_, num) => parseInt(num).toLocaleString('en-US')),
     isFree,
-    imageUrl: `./images/sierra-charts/${template.fileName}`,
+    imageUrl: `/images/sierra-charts/${template.fileName}`,
     imageHint: 'chart template',
     downloadUrl,
   };
@@ -307,7 +307,7 @@ export const mt5Templates = [
         name,
         price: isFree ? 'Download for free' : price.replace(/(\d+)/, (_, num) => parseInt(num).toLocaleString('en-US')),
         isFree,
-        imageUrl: `./images/mt5-templates/${template.fileName}`,
+        imageUrl: `/images/mt5-templates/${template.fileName}`,
         imageHint: 'mt5 template',
         downloadUrl
     };
@@ -332,7 +332,7 @@ export const atasTemplates = [
         name,
         price: isFree ? 'Download for free' : price,
         isFree,
-        imageUrl: `./images/atas-templates/${template.fileName}`,
+        imageUrl: `/images/atas-templates/${template.fileName}`,
         imageHint: 'atas template',
         downloadUrl
     };
@@ -383,3 +383,6 @@ export const commonBenefits = [
     
 
 
+
+
+    
