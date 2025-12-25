@@ -33,7 +33,9 @@ export default function Header() {
       element.scrollIntoView({ behavior: 'smooth' });
       // Update URL without the hash, but keep it relative
       const cleanPath = id === 'home' ? '/' : `/${id.replace('-templates', '')}`;
-      window.history.pushState({}, '', cleanPath);
+      // In a GH pages setup, the pathname might include the repo name.
+      // We want to preserve that, so we just update the hash.
+      window.history.pushState({}, '', `${window.location.pathname.split('#')[0]}${href}`);
       setIsOpen(false);
     }
   };
