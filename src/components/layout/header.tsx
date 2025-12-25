@@ -60,9 +60,9 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-black/80 backdrop-blur-lg">
-      <div className="container flex h-20 items-center justify-between">
+      <div className="container flex h-16 items-center justify-between">
         <Link href="/#home" className="flex items-center gap-2" onClick={(e) => handleScroll(e, '#home')}>
-          <Image src="/images/dt-logo.jpg" alt="Dark Trader Logo" width={100} height={100} />
+          <Image src="/images/dt-logo.jpg" alt="Dark Trader Logo" width={40} height={40} className="w-auto h-auto" />
           <span className="text-xl font-bold text-white">Dark Trader</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -88,7 +88,7 @@ export default function Header() {
               <div className="p-6">
                 <div className="flex items-center justify-between mb-8">
                     <Link href="/#home" className="flex items-center gap-2" onClick={(e) => handleScroll(e, '#home')}>
-                        <Image src="/images/dt-logo.jpg" alt="Dark Trader Logo" width={100} height={100} />
+                        <Image src="/images/dt-logo.jpg" alt="Dark Trader Logo" width={40} height={40} className="w-auto h-auto" />
                         <span className="text-xl font-bold text-white">Dark Trader</span>
                     </Link>
                 </div>
