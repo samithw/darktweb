@@ -4,46 +4,34 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#mentorships', label: 'Mentorships' },
-  { href: '#sierra-chart-templates', label: 'Sierra Chart' },
-  { href: '#atas-templates', label: 'ATAS' },
-  { href: '#mt5-templates', label: 'MT5' },
-  { href: '#trading-view', label: 'Trading View'},
-  { href: '#about', label: 'About' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/', label: 'Home' },
+  { href: '/mentorships', label: 'Mentorships' },
+  { href: '/sierra-chart-templates', label: 'Sierra Chart' },
+  { href: '/atas-templates', label: 'ATAS' },
+  { href: '/mt5-templates', label: 'MT5' },
+  { href: '/trading-view', label: 'Trading View'},
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const id = href.substring(1);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
-    }
-  };
-
   const NavLink = ({ href, label, className }: { href: string; label: string; className?: string; }) => {
-    // Single-page sites don't have a concept of an "active" page based on pathname
-    // You might want to implement scroll-based active link highlighting in the future
-    const isActive = false; 
+    const isActive = pathname === href || (pathname.startsWith('/darktweb') && href === '/') || (pathname === '/darktweb' && href === '/');
 
     return (
       <Link
         href={href}
-        onClick={(e) => handleScroll(e, href)}
+        onClick={() => setIsOpen(false)}
         className={cn(
           "transition-colors hover:text-primary",
           isActive ? "text-primary font-semibold" : "text-muted-foreground",
@@ -58,7 +46,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-black/80 backdrop-blur-lg">
       <div className="container flex h-20 items-center justify-between">
-        <Link href="/#home" className="flex items-center gap-2" onClick={(e) => handleScroll(e, '#home')}>
+        <Link href="/" className="flex items-center gap-2">
           <Image src="images/dt-logo.jpg" alt="Dark Trader Logo" width={60} height={60} className="h-14 w-auto" />
           <span className="text-xl font-bold text-white">Dark Trader</span>
         </Link>
@@ -84,7 +72,7 @@ export default function Header() {
                 </SheetHeader>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-8">
-                    <Link href="/#home" className="flex items-center gap-2" onClick={(e) => handleScroll(e, '#home')}>
+                    <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
                         <Image src="images/dt-logo.jpg" alt="Dark Trader Logo" width={60} height={60} className="h-14 w-auto" />
                         <span className="text-xl font-bold text-white">Dark Trader</span>
                     </Link>
