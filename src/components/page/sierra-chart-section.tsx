@@ -3,7 +3,7 @@
 
 import * as React from 'react';
 import Image from 'next/image';
-import { sierraChartTemplates } from '@/lib/data.tsx';
+import { sierraChartTemplates } from '@/lib/data';
 import TemplateCard from './template-card';
 import { Carousel, CarouselContent, CarouselItem, CarouselApi } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';

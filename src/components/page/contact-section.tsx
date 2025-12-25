@@ -1,6 +1,6 @@
 'use client';
 
-import { contactDetails, socialLinks } from "@/lib/data.tsx";
+import { contactDetails, socialLinks } from "@/lib/data";
 
 export default function ContactSection() {
     return (
