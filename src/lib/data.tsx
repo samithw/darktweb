@@ -211,21 +211,21 @@ export const socialLinks = [
 ];
 
 const freeTemplateMapping: { [key: string]: string } = {
-  "Red Delta DOM Template": "/downloads/Sierra_Red(Delta)DOM.Cht",
-  "Dark Trader Footprint Template": "/downloads/Sierra_FreeDarkTraderFootprint.Cht",
-  "Footprint DP Template": "/downloads/ATAS_FootprintDP.cts",
-  "Footprint DA Template": "/downloads/ATAS_FootprintDA.cts",
-  "Footprint + V. Template": "/downloads/ATAS_FootprintV.cts",
-  "AppcapFX-Trade-Manager Template": "/downloads/MT5_AppcapFXTradeManager.ex5",
-  "Better Volume 1.5 Template": "/downloads/MT5_BetterVolume15.ex5",
-  "FundedNext SessionBar Template": "/downloads/MT5_FundedNextSessionBar.ex5",
-  "FundedNext Trade Manager Template": "/downloads/MT5_FundedNextTradeManager.ex5",
-  "Volume profile Template": "/downloads/MT5_VolumeProfile.ex5",
-  "MaxMin DELTA Template": "/downloads/MT5_MaxMinDELTA.ex5",
-  "Strategy Checklist Template": "/downloads/MT5_StrategyChecklist.ex5",
-  "VWAP Template": "/downloads/MT5_VWAP.ex5",
-  "Average volume Pro Template": "/downloads/MT5_AverageVolumePro.ex5",
-  "Vwap DWM Template": "/downloads/MT5_VwapDWM.ex5"
+  "Red Delta DOM Template": "downloads/Sierra_Red(Delta)DOM.Cht",
+  "Dark Trader Footprint Template": "downloads/Sierra_FreeDarkTraderFootprint.Cht",
+  "Footprint DP Template": "downloads/ATAS_FootprintDP.cts",
+  "Footprint DA Template": "downloads/ATAS_FootprintDA.cts",
+  "Footprint + V. Template": "downloads/ATAS_FootprintV.cts",
+  "AppcapFX-Trade-Manager Template": "downloads/MT5_AppcapFXTradeManager.ex5",
+  "Better Volume 1.5 Template": "downloads/MT5_BetterVolume15.ex5",
+  "FundedNext SessionBar Template": "downloads/MT5_FundedNextSessionBar.ex5",
+  "FundedNext Trade Manager Template": "downloads/MT5_FundedNextTradeManager.ex5",
+  "Volume profile Template": "downloads/MT5_VolumeProfile.ex5",
+  "MaxMin DELTA Template": "downloads/MT5_MaxMinDELTA.ex5",
+  "Strategy Checklist Template": "downloads/MT5_StrategyChecklist.ex5",
+  "VWAP Template": "downloads/MT5_VWAP.ex5",
+  "Average volume Pro Template": "downloads/MT5_AverageVolumePro.ex5",
+  "Vwap DWM Template": "downloads/MT5_VwapDWM.ex5"
 };
 
 export const sierraChartTemplates = [
@@ -268,7 +268,7 @@ export const sierraChartTemplates = [
     name,
     price: isFree ? 'Download for free' : `LKR ${price.replace(/(\d+)/, (_, num) => parseInt(num).toLocaleString('en-US'))}`,
     isFree,
-    imageUrl: `/images/sierra-charts/${template.fileName}`,
+    imageUrl: `images/sierra-charts/${template.fileName}`,
     imageHint: 'chart template',
     downloadUrl,
   };
@@ -310,7 +310,7 @@ export const mt5Templates = [
         name,
         price: isFree ? 'Download for free' : `LKR ${parseInt(price).toLocaleString('en-US')}`,
         isFree,
-        imageUrl: `/images/mt5-templates/${template.fileName}`,
+        imageUrl: `images/mt5-templates/${template.fileName}`,
         imageHint: 'mt5 template',
         downloadUrl
     };
@@ -335,7 +335,7 @@ export const atasTemplates = [
         name,
         price: isFree ? 'Download for free' : price,
         isFree,
-        imageUrl: `/images/atas-templates/${template.fileName}`,
+        imageUrl: `images/atas-templates/${template.fileName}`,
         imageHint: 'atas template',
         downloadUrl
     };
@@ -389,3 +389,4 @@ export const commonBenefits = [
 
 
     
+

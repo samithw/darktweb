@@ -45,13 +45,13 @@
     {
       "id": "about-us",
       "description": "A portrait of the founder of Dark Trader.",
-      "imageUrl": "./images/dark-trader-photo.jpg",
+      "imageUrl": "images/dark-trader-photo.jpg",
       "imageHint": "founder portrait"
     },
     {
       "id": "contact-banner",
       "description": "Humans communicating through digital channels.",
-      "imageUrl": "./images/contact-banner.jpg",
+      "imageUrl": "images/contact-banner.jpg",
       "imageHint": "digital communication"
     }
   ]
