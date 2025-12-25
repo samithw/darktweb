@@ -1,6 +1,7 @@
 
 "use client"
 
+import { useEffect } from 'react';
 import HeroSection from '@/components/page/hero-section';
 import MentorshipsSection from '@/components/page/mentorships-section';
 import SierraChartSection from '@/components/page/sierra-chart-section';
@@ -11,6 +12,16 @@ import AboutSection from '@/components/page/about-section';
 import ContactSection from '@/components/page/contact-section';
 
 export default function Home() {
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
   return (
     <>
       <HeroSection />

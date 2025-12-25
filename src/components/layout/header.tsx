@@ -25,6 +25,19 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const id = href.substring(1);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      // Update URL without the hash, but keep it relative
+      const cleanPath = id === 'home' ? '/' : `/${id.replace('-templates', '')}`;
+      window.history.pushState({}, '', cleanPath);
+      setIsOpen(false);
+    }
+  };
+
   const NavLink = ({ href, label, className }: { href: string; label: string; className?: string; }) => {
     // Single-page sites don't have a concept of an "active" page based on pathname
     // You might want to implement scroll-based active link highlighting in the future
@@ -33,7 +46,7 @@ export default function Header() {
     return (
       <Link
         href={href}
-        onClick={() => setIsOpen(false)}
+        onClick={(e) => handleScroll(e, href)}
         className={cn(
           "transition-colors hover:text-primary",
           isActive ? "text-primary font-semibold" : "text-muted-foreground",
@@ -48,7 +61,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-black/80 backdrop-blur-lg">
       <div className="container flex h-20 items-center justify-between">
-        <Link href="/#home" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+        <Link href="/#home" className="flex items-center gap-2" onClick={(e) => handleScroll(e, '#home')}>
           <Image src="./images/dt-logo.jpg" alt="Dark Trader Logo" width={100} height={100} />
           <span className="text-xl font-bold text-white">Dark Trader</span>
         </Link>
@@ -74,7 +87,7 @@ export default function Header() {
                 </SheetHeader>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-8">
-                    <Link href="/#home" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+                    <Link href="/#home" className="flex items-center gap-2" onClick={(e) => handleScroll(e, '#home')}>
                         <Image src="/images/dt-logo.jpg" alt="Dark Trader Logo" width={100} height={100} />
                         <span className="text-xl font-bold text-white">Dark Trader</span>
                     </Link>
