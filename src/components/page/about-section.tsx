@@ -20,7 +20,7 @@ export default function AboutSection() {
                 <div>
                     {aboutImage && (
                         <Image
-                            src={aboutImage.imageUrl}
+                            src={aboutImage.imageUrl.startsWith('.') ? aboutImage.imageUrl.substring(1) : aboutImage.imageUrl}
                             alt={aboutImage.description}
                             width={600}
                             height={800}
