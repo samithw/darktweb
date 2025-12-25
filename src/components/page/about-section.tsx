@@ -19,14 +19,15 @@ export default function AboutSection() {
             <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
                     {aboutImage && (
-                        <Image
-                            src={aboutImage.imageUrl}
-                            alt={aboutImage.description}
-                            width={600}
-                            height={600}
-                            className="rounded-lg shadow-2xl object-cover mx-auto lg:mx-0"
-                            data-ai-hint={aboutImage.imageHint}
-                        />
+                        <div className="relative w-full max-w-[600px] aspect-square rounded-lg shadow-2xl overflow-hidden mx-auto lg:mx-0">
+                            <Image
+                                src={aboutImage.imageUrl}
+                                alt={aboutImage.description}
+                                fill
+                                className="object-cover"
+                                data-ai-hint={aboutImage.imageHint}
+                            />
+                        </div>
                     )}
                 </div>
                 <div className="text-lg text-muted-foreground space-y-6">
@@ -52,5 +53,3 @@ export default function AboutSection() {
         </section>
     );
 }
-
-    
